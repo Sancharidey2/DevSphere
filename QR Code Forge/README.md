@@ -10,7 +10,7 @@ A sleek, responsive QR Code generator built using HTML, CSS and JavaScript. Ente
 
 ## 📂 Project Structure  
 ```
-qr-code-forge/  
+QR Code Forge/  
 │  
 ├── index.html   # Main HTML file  
 ├── style.css    # CSS for styling  
@@ -23,11 +23,11 @@ qr-code-forge/
 ### 🔧 Installation  
 1. Clone the repository:  
    ```bash
-   git clone https://github.com/DevSphere/QR-Code-Forge.git
+   git clone https://github.com/DevSphere/QR Code Forge.git
    ```  
 2. Open the project folder:  
    ```bash
-   cd QR-Code-Forge
+   cd QR Code Forge
    ```  
 3. Launch the app by opening **index.html** in any web browser.  
 
