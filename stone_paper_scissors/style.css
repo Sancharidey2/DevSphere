@@ -1,0 +1,217 @@
+* {
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background: linear-gradient(45deg, #1e3c72, #2a5298);
+  color: #fff;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  overflow: hidden;
+}
+
+h1 {
+  background: linear-gradient(135deg, #00b4db, #0083b0);
+  color: #fff;
+  height: 3.5rem;
+  line-height: 3.5rem;
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+  border-radius: 8px;
+  position: relative;
+  overflow: hidden;
+  animation: titleGlow 2s infinite alternate;
+}
+
+@keyframes titleGlow {
+  from { box-shadow: 0 0 5px rgba(0, 180, 219, 0.5); }
+  to { box-shadow: 0 0 20px rgba(0, 180, 219, 0.8); }
+}
+
+.choice {
+  height: 120px;
+  width: 120px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(5px);
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  transition: all 0.3s ease;
+  animation: float 3s infinite alternate;
+}
+
+@keyframes float {
+  0% { transform: translateY(0px); }
+  100% { transform: translateY(-10px); }
+}
+
+.choice:hover {
+  cursor: pointer;
+  transform: scale(1.1);
+  border-color: #00ff88;
+  animation: none;
+  box-shadow: 0 0 15px rgba(0, 255, 136, 0.3);
+}
+
+.choice:nth-child(1) { animation-delay: 0s; }
+.choice:nth-child(2) { animation-delay: 0.2s; }
+.choice:nth-child(3) { animation-delay: 0.4s; }
+
+img {
+  height: 100px;
+  width: 100px;
+  object-fit: cover;
+  border-radius: 50%;
+  padding: 10px;
+  transition: transform 0.3s ease;
+}
+
+.choice:hover img {
+  transform: rotate(15deg);
+}
+
+.choices {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  margin: 1rem 0;
+}
+
+.score-board {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.5rem;
+  gap: 3rem;
+  margin: 1rem 0;
+  padding: 1rem;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(5px);
+  border-radius: 8px;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  animation: glowPulse 2s infinite alternate;
+}
+
+@keyframes glowPulse {
+  from { box-shadow: 0 0 5px rgba(255, 255, 255, 0.2); }
+  to { box-shadow: 0 0 20px rgba(255, 255, 255, 0.4); }
+}
+
+#user-score,
+#comp-score {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #00ff88;
+  text-shadow: 0 0 10px rgba(0, 255, 136, 0.5);
+  transition: all 0.3s ease;
+}
+
+.msg-container {
+  margin: 1rem 0;
+}
+
+#msg {
+  background: linear-gradient(135deg, #00b4db, #0083b0);
+  color: #fff;
+  font-size: 1.3rem;
+  display: inline-block;
+  padding: 0.8rem 1.5rem;
+  border-radius: 8px;
+  animation: messageSlide 0.5s ease;
+}
+
+@keyframes messageSlide {
+  from { transform: translateY(-20px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+#reset {
+  padding: 0.8rem 1.5rem;
+  background: linear-gradient(135deg, #ff416c, #ff4b2b);
+  color: white;
+  font-size: 1rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 1rem;
+  position: relative;
+  overflow: hidden;
+}
+
+#reset:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(255, 65, 108, 0.4);
+}
+
+#reset::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(transparent, rgba(255, 255, 255, 0.2), transparent);
+  transform: rotate(45deg);
+  animation: buttonShine 3s infinite;
+}
+
+@keyframes buttonShine {
+  from { transform: rotate(45deg) translateX(-100%); }
+  to { transform: rotate(45deg) translateX(100%); }
+}
+
+.winner {
+  animation: winPulse 0.5s ease;
+}
+
+@keyframes winPulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.15); }
+  100% { transform: scale(1); }
+}
+
+@media (max-height: 600px) {
+  .choice {
+      height: 100px;
+      width: 100px;
+  }
+  
+  img {
+      height: 80px;
+      width: 80px;
+  }
+  
+  h1 {
+      height: 3rem;
+      line-height: 3rem;
+      font-size: 1.5rem;
+  }
+  
+  .score-board {
+      font-size: 1.2rem;
+  }
+  
+  #user-score,
+  #comp-score {
+      font-size: 2rem;
+  }
+  
+  #msg {
+      font-size: 1.1rem;
+  }
+  
+  #reset {
+      font-size: 0.9rem;
+      padding: 0.6rem 1.2rem;
+  }
+}
