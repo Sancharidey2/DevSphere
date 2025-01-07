@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Clock</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="clock-container">
+        <div class="clock">
+            <div class="date" id="date">Monday, January 8</div>
+            <div class="time" id="time">00:00:00</div>
+            <div class="timezone">
+                <select id="timezoneSelect">
+                    <option value="Asia/Kolkata">India (IST)</option>
+                    <option value="UTC">UTC</option>
+                    <option value="America/New_York">New York (EST)</option>
+                    <option value="Europe/London">London (GMT)</option>
+                    <option value="Asia/Tokyo">Tokyo (JST)</option>
+                    <option value="Australia/Sydney">Sydney (AEST)</option>
+                </select>
+            </div>
+            <div class="controls">
+                <button id="formatToggle" class="btn">
+                    <i class="fas fa-clock"></i>
+                    <span>12H/24H</span>
+                </button>
+                <button id="themeToggle" class="btn">
+                    <i class="fas fa-moon"></i>
+                    <span>Theme</span>
+                </button>
+            </div>
+        </div>
+    </div>
+    <footer class="footer">
+        <div class="footer-content">
+            <p>Made with <i class="fas fa-heart pulse"></i> by Swayam Prakash Kar</p>
+            <div class="social-links">
+                <a href="https://github.com/Swayam-code" target="_blank" title="GitHub">
+                    <i class="fab fa-github"></i>
+                </a>
+                <a href="https://linkedin.com/in/swayam-prakash-kar" target="_blank" title="LinkedIn">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+                <a href="mailto:swayam123code@gmail.com" title="Email">
+                    <i class="fas fa-envelope"></i>
+                </a>
+            </div>
+        </div>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
