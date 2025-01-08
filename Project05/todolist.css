@@ -4,7 +4,6 @@
 }
 body {
     background: rgb(15, 208, 195);
-    background: linear-gradient(90deg,  rgb(37, 196, 196) 19%, rgba(224, 114, 186, 0.97) 73%, rgba(136,136,168,1) 100%);
     font-family: sans-serif;
 }
 .main {
