@@ -1,5 +1,5 @@
-<div align = "center">
-<a name="top"></a>
+<div align = "center" id="top">
+<a href="#top">
 <div align="center">
 
 # <p>DevSphere - Open-Source Web Development Projects
@@ -9,7 +9,7 @@
 
 </div>
 
-<table align="cSOMNATH0904/DevSphereenter">
+<table align="center">
     <thead align="center">
         <tr border: 1px;>
             <td><b><img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/tarikul-islam-anik/main/assets/images/Star.png" width="20" height="20"> Stars</b></td>
@@ -123,7 +123,11 @@
 
 ## Forkers
 
+<div align='center'>
+
 [![Forkers repo roster for @SOMNATH0904/DevSphere](https://reporoster.com/forks/SOMNATH0904/DevSphere)](https://github.com/SOMNATH0904/DevSphere/network/members)
+
+</div>
 
 
 # Code of Conduct
