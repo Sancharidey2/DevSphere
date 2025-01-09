@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Search App</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo" id="home-link">MovieFlix</div>
+            <div class="nav-links">
+                <a href="#" class="active">Search</a>
+                <a href="#" id="favorites-link">Favorites</a>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <div class="search-container">
+            <div class="search-box">
+                <input type="text" id="search-input" placeholder="Search for movies...">
+                <button id="search-button"><i class="fas fa-search"></i></button>
+            </div>
+            <div id="search-results" class="movie-grid"></div>
+        </div>
+
+        <div class="favorites-container hidden">
+            <h2>Your Favorite Movies</h2>
+            <div id="favorites-grid" class="movie-grid"></div>
+        </div>
+
+        <div id="movie-details" class="movie-details hidden">
+            <button class="back-button"><i class="fas fa-arrow-left"></i> Back</button>
+            <div class="movie-details-content"></div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 MovieFlix. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
