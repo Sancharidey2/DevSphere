@@ -12,19 +12,18 @@ body {
   align-items: center;
   justify-content: center;
   min-height: 100vh;
-  background: #0A0A23; /* Dark blue background */
+  background: #0A0A23;
 }
 
 .wrapper {
   width: 65vmin;
   height: 75vmin;
   display: flex;
-  overflow: hidden;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   border-radius: 5px;
-  background: #1E1E3F; /* Dark theme for game board */
+  background: #1E1E3F;
   box-shadow: 0 20px 40px rgba(52, 87, 220, 0.2);
 }
 
@@ -42,46 +41,23 @@ body {
   height: 100%;
   width: 100%;
   display: grid;
-  background: #000000; /* Black background for play board */
+  background: #000000;
   grid-template: repeat(30, 1fr) / repeat(30, 1fr);
 }
 
 .play-board .food {
   border-radius: 100%;
-  background: #ff0040; /* Contrasting red food */
-}
-
-.play-board .bonus-food {
-  border-radius: 100%;
-  background: #FFD700; /* Gold for bonus food */
+  background: #ff0040;
 }
 
 .play-board .head {
   border-radius: 5px;
-  background: #13f317; /* Light blue for snake */
-}
-
-.play-board .obstacle {
-  background: #0de6f1; /* Black for obstacles */
-}
-
-.play-board .power-up {
-  background: #00FF00; /* Green for power-ups */
+  background: #13f317;
 }
 
 .controls {
   display: none;
   justify-content: space-between;
-}
-
-.controls i {
-  padding: 25px 0;
-  text-align: center;
-  font-size: 1.3rem;
-  color: #B8C6DC;
-  width: calc(100% / 4);
-  cursor: pointer;
-  border-right: 1px solid #171B26;
 }
 
 .button-container {
@@ -95,51 +71,55 @@ body {
   padding: 15px 25px;
   font-size: 1.1rem;
   color: #fff;
-  background: linear-gradient(135deg, #FFD700, #FFB300); /* Yellow gradient background */
+  background: linear-gradient(135deg, #FFD700, #FFB300);
   border: none;
-  border-radius: 8px; /* Rounded corners */
+  border-radius: 8px;
   cursor: pointer;
   transition: background 0.3s, transform 0.3s, box-shadow 0.3s;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
   font-weight: bold;
 }
 
 .new-game-button:hover, .restart-game-button:hover {
-  background: linear-gradient(135deg, #FFB300, #FFD700); /* Reverse gradient on hover */
-  transform: scale(1.1); /* Slightly enlarge on hover */
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3); /* Stronger shadow on hover */
+  background: linear-gradient(135deg, #FFB300, #FFD700);
+  transform: scale(1.1);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
 }
 
-.new-game-button:active, .restart-game-button:active {
-  transform: scale(1); /* Return to normal size when clicked */
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Smaller shadow when clicked */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
 }
 
-/* Button Focus Effects */
-.new-game-button:focus, .restart-game-button:focus {
-  outline: none;
-  border: 2px solid #FFD700; /* Yellow border on focus */
-  box-shadow: 0 0 10px rgba(255, 215, 0, 0.5); /* Soft yellow glow */
+.modal-content {
+  background-color: #1E1E3F;
+  margin: 15% auto;
+  padding: 20px;
+  border-radius: 10px;
+  width: 80%;
+  max-width: 400px;
+  text-align: center;
+  color: #fff;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
-/* Media Queries for Responsiveness */
-@media screen and (max-width: 800px) {
-  .wrapper {
-    width: 90vmin;
-    height: 120vmin;
-  }
+#replayButton {
+  margin-top: 15px;
+  padding: 10px 20px;
+  font-size: 1rem;
+  color: #fff;
+  background: linear-gradient(135deg, #FFD700, #FFB300);
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
 
-  .game-details {
-    font-size: 1rem;
-    padding: 15px 27px;
-  }
-
-  .controls {
-    display: flex;
-  }
-
-  .controls i {
-    padding: 15px 0;
-    font-size: 1rem;
-  }
+#replayButton:hover {
+  background: linear-gradient(135deg, #FFB300, #FFD700);
 }
