@@ -1,0 +1,174 @@
+/* General Reset */
+body, html {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+    transition: background-color 0.3s ease, background-image 0.3s ease;
+}
+
+body {
+    background-color: #121212;
+    color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+/* Typewriter Effect */
+.text {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #4caf50;
+    text-align: center;
+    margin: 20px 0;
+    min-height: 50px; /* To maintain space for the typewriter text */
+}
+
+/* Input Field and Buttons Container */
+.controls {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    width: 80%;
+    max-width: 400px;
+    margin-top: 20px;
+}
+
+/* Input Field */
+#userInput {
+    padding: 10px;
+    width: 100%;
+    font-size: 1rem;
+    border: 2px solid #4caf50;
+    border-radius: 5px;
+    outline: none;
+    background: #1e1e1e;
+    color: #fff;
+    transition: border-color 0.3s ease;
+}
+
+#userInput:focus {
+    border-color: #80e27e;
+}
+
+/* Buttons */
+button {
+    padding: 10px 20px;
+    font-size: 1rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
+}
+
+button:hover {
+    transform: scale(1.05);
+}
+
+button:active {
+    transform: scale(0.95);
+}
+
+/* Individual Button Styles */
+#addText {
+    background-color: #4caf50;
+    color: #fff;
+}
+
+#addText:hover {
+    background-color: #80e27e;
+}
+
+#deleteText {
+    background-color: #f44336;
+    color: #fff;
+}
+
+#deleteText:hover {
+    background-color: #ff7961;
+}
+
+#pauseResume {
+    background-color: #ff9800;
+    color: #fff;
+}
+
+#pauseResume:hover {
+    background-color: #ffc947;
+}
+
+#toggleTheme {
+    background-color: #2196f3;
+    color: #fff;
+}
+
+#toggleTheme:hover {
+    background-color: #64b5f6;
+}
+
+#changeBackground {
+    background-color: #9c27b0;
+    color: #fff;
+}
+
+#changeBackground:hover {
+    background-color: #ce93d8;
+}
+
+/* Slider */
+#speedSlider {
+    -webkit-appearance: none;
+    width: 100%;
+    height: 8px;
+    margin: 10px 0;
+    border-radius: 5px;
+    background: #4caf50;
+    outline: none;
+    transition: background-color 0.3s ease;
+}
+
+#speedSlider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    background: #ffffff;
+    border: 2px solid #4caf50;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#speedSlider::-webkit-slider-thumb:hover {
+    background: #80e27e;
+}
+
+/* Light Theme */
+body.light-theme {
+    background-color: #f5f5f5;
+    color: #000;
+}
+
+body.light-theme button {
+    color: #fff;
+}
+
+body.light-theme #userInput {
+    background: #fff;
+    color: #000;
+    border-color: #4caf50;
+}
+
+body.light-theme #speedSlider {
+    background: #2196f3;
+}
+
+body.light-theme #speedSlider::-webkit-slider-thumb {
+    background: #2196f3;
+}
+
