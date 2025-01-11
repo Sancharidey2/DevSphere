@@ -21,10 +21,10 @@ function startGame() {
   shuffledQuestions = questions.sort(() => Math.random() - 0.5);
   currentQuestionIndex = 0;
   questionContainerElement.classList.remove("hide");
-  scoreContainerElement.classList.remove("hide");  // Show score container when quiz starts
+  scoreContainerElement.classList.remove("hide");
   setNextQuestion();
   quizScore = 0;
-  scoreElement.innerText = `Score: ${quizScore}`;  // Initialize score to zero
+  scoreElement.innerText = `Score: ${quizScore}`;
   scoreElement.classList.remove("correct");
   scoreElement.classList.remove("wrong");
 }
@@ -62,6 +62,7 @@ function selectAnswer(e) {
   setStatusClass(document.body, correct);
   Array.from(answerButtonsElement.children).forEach((button) => {
     setStatusClass(button, button.dataset.correct);
+    button.disabled = true;  // Disable the button after an answer is selected
   });
   if (shuffledQuestions.length > currentQuestionIndex + 1) {
     nextButton.classList.remove("hide");
