@@ -137,6 +137,7 @@ h1 {
   #reset {
     font-size: 0.9rem;
     padding: 0.6rem 1.2rem;
+    margin-top: 6rem;
   }
 }
 
@@ -161,5 +162,12 @@ h1 {
 
   h1 {
     font-size: 1.3rem;
+    margin-top: 26rem;
+  }
+
+  #reset {
+    font-size: 0.9rem;
+    padding: 0.6rem 1.2rem;
+    margin-top: 3rem;
   }
 }

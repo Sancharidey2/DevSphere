@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Virtual Drum Kit</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Virtual Drum Kit</h1>
+    <div class="drum-kit">
+        <div class="key" data-key="65">A</div>
+        <div class="key" data-key="83">S</div>
+        <div class="key" data-key="68">D</div>
+        <div class="key" data-key="70">F</div>
+        <div class="key" data-key="71">G</div>
+        <div class="key" data-key="72">H</div>
+        <div class="key" data-key="74">J</div>
+        <div class="key" data-key="75">K</div>
+        <div class="key" data-key="76">L</div>
+    </div>
+
+    <!-- Add audio elements -->
+    <audio data-key="65" src="sounds/kick.wav"></audio>
+    <audio data-key="83" src="sounds/snare.wav"></audio>
+    <audio data-key="68" src="sounds/hihat.wav"></audio>
+    <audio data-key="70" src="sounds/tom1.wav"></audio>
+    <audio data-key="71" src="sounds/tom2.wav"></audio>
+    <audio data-key="72" src="sounds/tom3.wav"></audio>
+    <audio data-key="74" src="sounds/crash.wav"></audio>
+    <audio data-key="75" src="sounds/ride.wav"></audio>
+    <audio data-key="76" src="sounds/clap.wav"></audio>
+
+    <script src="script.js"></script>
+</body>
+</html>
