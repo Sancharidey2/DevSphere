@@ -1,19 +1,31 @@
 <!DOCTYPE html>
-<html lang="en">
+
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>QR Code Generator</title>
-    <link rel="stylesheet" href="style.css">
-    <script src="https://cdn.jsdelivr.net/npm/qrcodejs/qrcode.min.js"></script>
-    <script defer src="script.js"></script>
+<meta charset="utf-8"/>
+<meta name="viewport"content="width=device-width,initial-scale=1.0"/>
+<title>document</title>
+<link rel="stylesheet" href="style.css">
+
 </head>
 <body>
-    <h1>QR Code Generator</h1>
-    <input type="text" id="link" placeholder="Enter link here">
-    <button onclick="generateQRCode()">Generate QR Code</button>
-    <div id="qrcode">
-        <div id="emoji"></div>
+    <div class="main">
+        <h1>Enter Your Website URL</h1>
     </div>
+<div class="container">
+   
+    <form action="">
+        <div>
+           <input type="text" id="qrText" placeholder="Enter Your Text">
+        </div>
+       <button  class="button" onclick="generatQR(event)">Generate QR Code</button>
+       <div id="imgBox">
+         <img src="" id="qrImage">
+       </div> 
+     </form>
+</div>
+<script src="script.js"></script>
+
+
 </body>
 </html>
