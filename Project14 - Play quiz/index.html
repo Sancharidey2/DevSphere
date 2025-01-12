@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <!-- category container -->
     <div class="config-container">
         <h2 class="config-title">Welcome to the Quiz</h2>
         
@@ -55,11 +56,13 @@
                 <li class="answer-option">
                     <p>Create function myFunction()</p>
                 </li>
-                <li class="answer-option">
+                <li class="answer-option correct">
                     <p>function myFunction()</p>
+                    <i class="ri-check-fill"></i>
                 </li>
-                <li class="answer-option">
+                <li class="answer-option incorrect">
                     <p>def function myFunction()</p>
+                    <i class="ri-close-fill"></i>
                 </li>
                 <li class="answer-option">
                     <p>func myFunction()</p>
@@ -75,5 +78,17 @@
             </button>
         </div>
     </div>
+
+    <!-- result container -->
+     <div class="result-container">
+        <p class="result-img">🎉</p>
+        <h2 class="result-title">Quiz completed</h2>
+        <p class="result-message">You answered <b>2</b> out of <b>5</b> questions correctly.</p>
+        <button class="try-again-btn">Try again</button>
+     </div>
+
+     
+     <script src="questions.js"></script>
+     <script src="script.js"></script>
 </body>
 </html>
