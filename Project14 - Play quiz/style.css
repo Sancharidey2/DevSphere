@@ -23,7 +23,7 @@ body{
    
 }
 .config-container{
-    /* display: block;a */
+    display: block;
     width: 415px;
     padding: 25px;
     text-align: center;
@@ -107,9 +107,13 @@ body{
 }
 
 .quiz-container{
-    display: block;
+    /* display: block; */
     width: 480px;
 
+}
+.quiz-footer .next-question-btn{
+    display: inline-flex;
+    /* visibility: hidden; */
 }
 .quiz-content .question-text{
     font-size: 1.5rem;
