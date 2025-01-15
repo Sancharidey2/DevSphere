@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume Studio</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="header">
+        <h1>Resume Studio</h1>
+        <button id="themeSwitcher" title="Switch Theme">🌙</button>
+    </header>
+    <main>
+        <section class="builder">
+            <h2>Build Your Resume</h2>
+            <form id="resumeForm">
+                <div class="form-group">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" placeholder="John Doe" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" placeholder="example@example.com" required>
+                </div>
+                <div class="form-group">
+                    <label for="phone">Phone:</label>
+                    <input type="tel" id="phone" placeholder="123-456-7890" required>
+                </div>
+                <div class="form-group">
+                    <label for="education">Education:</label>
+                    <input type="text" id="education" placeholder="Your education details">
+                </div>
+                <div class="form-group">
+                    <label for="summary">Summary:</label>
+                    <textarea id="summary" placeholder="A brief description about yourself"></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="projects">Projects:</label>
+                    <textarea id="projects" placeholder="Mention your projects here"></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="skills">Skills:</label>
+                    <textarea id="skills" placeholder="E.g., HTML, CSS, JavaScript"></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="experience">Experience:</label>
+                    <textarea id="experience" placeholder="List your work experiences"></textarea>
+                </div>
+                <button type="button" id="previewBtn">Live Preview</button>
+                <button type="button" id="downloadBtn">Download Resume</button>
+            </form>
+        </section>
+        <section class="preview">
+            <h2>Live Preview</h2>
+            <div id="resumePreview">
+                <p class="placeholder">Fill in the form to see a live preview...</p>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>Made with ❤️ by Resume Studio</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
