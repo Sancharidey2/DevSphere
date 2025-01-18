@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body{
+        background-color:  #dbdbb0;
+        font-family: 'Poppins', sans-serif;
+        justify-content: center;
+        align-items: center;
+        display: grid;
+    }
+    .container{
+        border: 2px solid black;
+        background-color: antiquewhite;
+
+    }
+    a{
+        color: black;
+    }
+</style>
+<body>
+    <div class= "container">
+    <a href="addstu">Add NEW Value</a>
+    <table border="10" cellspacing="10">
+        <tr>
+            <th>id</th><th>name</th><th>branch</th><th>age</th>
+        </tr>
+        {% for i in Skey %}
+        <tr>
+            <td>{{i.id}}</td>
+            <td>{{i.s_name1}}</td>
+            <td>{{i.s_name2}}</td>
+            <td>{{i.s_out}}</td>
+            <td><a href="deleteCourse_black?eid={{i.id}}">delete</a></td>
+            <td> <a href="updateCourse1_b?eid={{i.id}}">update</a></td>
+        {% endfor %}    
+        </tr>
+      </table>  
+    </div>
+</body>
+</html>
