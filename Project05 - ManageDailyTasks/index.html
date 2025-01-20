@@ -3,13 +3,12 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Document</title>
+<title>Manage Daily Tasks</title>
 <link rel="stylesheet" href="todolist.css">
 <script src="https://kit.fontawesome.com/f30fac2c61.js" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
 </head>
 <body>
-
 <main class="main">
     <div id="home-tab">
         <div class="heading">JUST DO IT.</div>
@@ -17,22 +16,20 @@
             <input type="text" id="newtask" placeholder="Add a Task ...">
         </div>
         <div class="buttons">
-            <button onclick="Add()" id="submittask">Got This!</button>
+            <button onclick="Add()" id="submittask">Add Task</button>
             <button onclick="saveAsPDF()" id="savepdf">Save as PDF</button>
-            <button onclick="showDocuments()" id="watchpdf">Check PDF</button>
+            <button onclick="showDocuments()" id="watchpdf">Saved Documents</button>
         </div>
-        <div class="container"></div>
+        <ul class="container"></ul>
     </div>
     <div id="documents-tab" style="display: none;">
         <button onclick="back()" id="backtohome">Back</button>
-        
         <div class="heading">Saved Documents</div>
         <div class="documents-list"></div>
     </div>
 </main>
 
 <div id="pdfMessage" class="pdf-message">PDF Created Successfully!</div>
-
 <script src="todolist.js"></script>
 </body>
 </html>
