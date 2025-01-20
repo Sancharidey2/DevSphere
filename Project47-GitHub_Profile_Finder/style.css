@@ -1,0 +1,122 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background:linear-gradient(to right,#ff1d58,#f75990,#fff685,#00DDFF, #0049B7)
+
+}
+.search{
+    padding: 7px;
+    width: 300px;
+    margin-top: 50px;
+    margin-left: 570px;
+    border-radius: 10px;
+    border: 2px solid black;
+}
+#heading{
+    font-size: 40px;
+    color: black;
+    text-align: center;
+}
+.btn{
+    width:90px;
+    padding: 6px;
+    border-radius: 10px;
+    background:linear-gradient(to right,blue,navy);
+    background-repeat: no-repeat;
+    color: aliceblue;
+    font-weight: 600;
+    font-size: 15px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+.btn:hover{
+    transform: scale(1.04);
+}
+.Loading{
+    display: none;
+    font-size: 20px;
+    font-weight: 500;
+    color: black;
+    text-align: center;
+}
+.github-profile-details{
+    margin-left: 570px;
+    margin-top: 50px;
+}
+.Loading.show{
+    display: block;
+}
+.github-profile-details.hide{
+    display: none;
+}
+.username{
+    font-size: 28px;
+    font-style: italic;
+}
+.repos{
+    font-size: 20px;
+    font-weight: 100;
+}
+
+.followers{
+    font-size: 20px;
+    font-weight: 100;
+}
+
+.following{
+    font-size: 20px;
+    font-weight: 100;
+}
+img{
+    border-radius:50%;
+    border: 2px solid black;
+}
+@media (max-width:420px) {
+    body{
+        background:linear-gradient(to right,#ff1d58,#f75990,#fff685,#00DDFF, #0049B7)
+    }
+    .search{
+        margin-left: 40px;
+        width: 180px;
+    }
+    #heading{
+        font-size: 18px;
+        text-align: center; 
+        margin-top: 20px;
+    }
+    .btn{
+        width: 60px;
+        font-size: 12px;
+    }
+    .Loading{
+        font-size: 13px;
+        font-weight: 200;
+        text-align: center;
+    }
+    .github-profile-details{
+        margin-left: 20px;
+    }
+    .username{
+        margin-left:100px;
+        font-size: 18px;
+    }
+    .repos{
+        margin-left: 100px;
+        font-size: 18px;
+    }
+    .followers{
+        margin-left: 100px;
+        font-size: 18px;
+    }
+    .following{
+        margin-left: 100px;
+        font-size: 18px;
+    }
+    img{
+        margin-left: 10px;
+        width: 250px;
+    }
+}
