@@ -8,6 +8,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const playerXWins = document.getElementById('playerXWins');
     const playerOWins = document.getElementById('playerOWins');
     const draws = document.getElementById('draws');
+    const resetScoreboardButton = document.getElementById('resetScoreboard');
+
     let currentPlayer = 'X';
     let gameActive = true;
     let boardState = Array(9).fill('');
@@ -23,9 +25,10 @@ document.addEventListener('DOMContentLoaded', () => {
         [1, 4, 7],
         [2, 5, 8],
         [0, 4, 8],
-        [2, 4, 6]
+        [2, 4, 6],
     ];
 
+    // Updates the scoreboard based on the winner
     function updateScoreboard(winner) {
         if (winner === 'X') {
             playerXScore++;
@@ -33,12 +36,13 @@ document.addEventListener('DOMContentLoaded', () => {
         } else if (winner === 'O') {
             playerOScore++;
             playerOWins.textContent = `Player O Wins: ${playerOScore}`;
-        } else {
+        } else if (winner === 'draw') {
             tieCount++;
             draws.textContent = `Draws: ${tieCount}`;
         }
     }
 
+    // Handles the click event for each cell
     function handleCellClick(e) {
         const cell = e.target;
         const index = cell.getAttribute('data-index');
@@ -47,43 +51,40 @@ document.addEventListener('DOMContentLoaded', () => {
             return;
         }
 
-        cell.textContent = currentPlayer;
         boardState[index] = currentPlayer;
+        cell.textContent = currentPlayer;
 
         if (checkWin()) {
             gameActive = false;
-            updateScoreboard(currentPlayer); // Update scoreboard based on winner
+            updateScoreboard(currentPlayer);
             showResult(`${currentPlayer} wins!`);
             return;
         }
 
         if (boardState.every(cell => cell !== '')) {
             gameActive = false;
-            updateScoreboard('draw'); // Update scoreboard for a draw
-            showResult('Draw!');
+            updateScoreboard('draw');
+            showResult('It\'s a Draw!');
             return;
         }
 
         currentPlayer = currentPlayer === 'X' ? 'O' : 'X';
     }
 
+    // Checks if the current player has won
     function checkWin() {
-        return winningConditions.some(condition => {
-            return condition.every(index => boardState[index] === currentPlayer);
-        });
+        return winningConditions.some(condition =>
+            condition.every(index => boardState[index] === currentPlayer)
+        );
     }
 
+    // Displays the result in a modal
     function showResult(message) {
         resultMessage.textContent = message;
         modal.style.display = 'block';
-
-        // Reset game state after displaying result
-        boardState = Array(9).fill('');
-        currentPlayer = 'X';
-        gameActive = true;
-        cells.forEach(cell => cell.textContent = '');
     }
 
+    // Determines the overall winner and resets the scoreboard
     function determineOverallWinner() {
         let winnerMessage;
 
@@ -94,36 +95,41 @@ document.addEventListener('DOMContentLoaded', () => {
         } else if (playerXScore === playerOScore && (playerXScore > 0 || playerOScore > 0)) {
             winnerMessage = 'It\'s a Tie between Player X and Player O!';
         } else {
-            winnerMessage = 'It\'s a Draw Overall!';
+            winnerMessage = 'No games played yet!';
         }
 
-        alert(winnerMessage); // Show pop-up message with overall winner
+        alert(winnerMessage);
+    }
+
+    // Resets the game state
+    function resetGameState() {
+        boardState = Array(9).fill('');
+        currentPlayer = 'X';
+        gameActive = true;
+        cells.forEach(cell => (cell.textContent = ''));
     }
 
     // Event listeners
     cells.forEach(cell => cell.addEventListener('click', handleCellClick));
+
     closeModal.addEventListener('click', () => {
         modal.style.display = 'none';
     });
+
     newGameButton.addEventListener('click', () => {
         modal.style.display = 'none';
-        // Reset game state for a new game
-        boardState = Array(9).fill('');
-        currentPlayer = 'X';
-        gameActive = true;
-        cells.forEach(cell => cell.textContent = '');
+        resetGameState();
     });
 
-    const resetScoreboardButton = document.getElementById('resetScoreboard');
     resetScoreboardButton.addEventListener('click', () => {
-        determineOverallWinner(); // Determine and show the overall winner before resetting
+        determineOverallWinner();
         playerXScore = 0;
         playerOScore = 0;
         tieCount = 0;
 
-        // Update scoreboard elements directly after clicking "Reset Scoreboard"
         playerXWins.textContent = `Player X Wins: ${playerXScore}`;
         playerOWins.textContent = `Player O Wins: ${playerOScore}`;
         draws.textContent = `Draws: ${tieCount}`;
     });
 });
+
