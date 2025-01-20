@@ -1,0 +1,119 @@
+
+body {
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(135deg, #74ebd5, #9face6);
+  color: #333;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.container {
+  width: 90%;
+  max-width: 600px;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  text-align: center;
+}
+
+header {
+  padding: 20px;
+  background: #74ebd5;
+  color: #fff;
+}
+.mark-btn {
+  background: #ff6f61;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  font-size: 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  margin-left: 10px;
+}
+
+.mark-btn:hover {
+  background: #ff4a3a;
+}
+
+.mark-btn:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+}
+
+
+header h1 {
+  margin: 0;
+  font-size: 1.8rem;
+}
+
+header p {
+  font-size: 1rem;
+  margin: 5px 0 0;
+}
+
+/* Flashcard Section */
+.flashcard {
+  padding: 20px;
+  position: relative;
+}
+
+.word {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.definition {
+  font-size: 1.2rem;
+  color: #555;
+}
+
+#flashcard-image {
+  width: 100%;
+  max-width: 200px;
+  margin: 10px auto 0;
+  display: block;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.hidden {
+  display: none;
+}
+
+/* Controls Section */
+.controls {
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.controls button {
+  background: #9face6;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  font-size: 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.controls button:hover {
+  background: #74ebd5;
+}
+
+/* Footer Section */
+footer {
+  padding: 10px;
+  background: #333;
+  color: #fff;
+  font-size: 0.9rem;
+}
