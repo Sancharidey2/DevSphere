@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% block title %} SignUp {% endblock title %}
+{% block content %}
+
+<div class="card p-3" style="background-color: rgb(0 0 0 / 33%) !important;  justify-self: center; width: 65vh;">
+
+
+{% for message in messages %}
+
+<div class="alert alert-warning alert-dismissible fade show" role="alert">
+  <strong></strong> {{message}}
+  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+{% endfor %}
+
+<!-- <div class="card p-3" style="background-color: rgb(0 0 0 / 33%) !important;  justify-self: center; width: 65vh;"> -->
+  <h1  style="color: white;">Login</h1>
+  <form action="/auth/login/" method="post" style="color: aliceblue;">{% csrf_token %}
+    <br>
+    
+    <label for="Email">Email</label>
+    <div class="form-group">
+      <input type="email" class="form-control" id="email" name="email" required>
+    </div>
+    <label for="pass1">Password</label>
+    <div class="form-group">
+      <input type="password" class="form-control" name="pass1" id="pass1" required>
+    </div>
+    
+    <br>
+    <button type="submit" class="btn bg-success" style="color:white;">Login</button>
+    <br>
+    <span>Forget Password ?<a href="/auth/request-reset-email/"> Reset </a></span>
+    <br>
+    New User? <a href="/auth/signup/">SignUp</a>
+    
+    </form>
+</div>
+
+{% endblock content %}
