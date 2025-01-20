@@ -1,0 +1,112 @@
+:root {
+    /* Primary Colors */
+    --sky-blue: #2da9e7;
+    --light-steel-blue: #92a8d1;
+
+    /* Secondary Colors */
+    --light-cyan-blue: #80ced6;
+    --powder-blue: #b7d7e8;
+
+    /* Neutral Colors */
+    --dark-charcoal: #3b3a30;
+    --medium-gray: #b2b2b2;
+    --very-light-gray: #f0efef;
+
+    /* Accent Colors */
+    --light-greenish-gray: #ddeedd;
+    --light-lavender: #E6E6FA;
+}
+body {
+    font-family: 'Times New Roman', Times, serif;
+    background-color: #f0efef;  
+
+}
+
+
+h2 {
+    color: var(--sky-blue);
+    font-family: 'Times New Roman', Times, serif;
+    margin-bottom: 30px;
+    text-decoration-thickness: 1.5px;
+    text-underline-offset: 6px; 
+    font-size: 2rem;
+    text-align: center;
+}
+label {
+    color: var(--dark-charcoal);
+    font-size: 1.2rem;
+    text-align: center;
+}
+.navbar {
+    background-color: var(--sky-blue);
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 1.3rem;
+    transition: background-color 0.3s ease;
+}
+.nav-link {
+    color: var(--dark-charcoal);
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.nav-link:hover {
+    background-color: var(--light-cyan-blue);
+    color: var(--dark-charcoal);
+    border-radius: 5px;
+    transform: scale(1.05);
+
+}
+.btn-chat {
+    background-color: white; /* Set background to white */
+    color: var(--dark-charcoal); /* Set text color to light cyan blue */
+    border: 2px solid var(--light-cyan-blue); /* Set border to light cyan blue */
+    font-size: 1.3rem;
+}
+
+.btn-chat:hover {
+    background-color: var(--light-cyan-blue); /* Change background on hover */
+    color: white; /* Change text color on hover */
+    transform: scale(1.05);
+}
+footer {
+    width: 100%; /* Ensure footer spans full width */
+    background-color: whitesmoke;
+    color: grey;
+    padding: 15px 0; /* Top and Bottom padding */
+    border-top: 4px solid var(--light-cyan-blue);
+    text-align: center;
+    margin-top: 10px ; /* Remove default margins */
+    font-size: 1.3rem;
+}
+/* Add any additional styles specific to this page */
+.certificate-container {
+    border: 2px solid var(--light-cyan-blue);
+    padding: 20px;
+    background-color: var(--light-greenish-gray);
+    border-radius: 8px;
+    display: inline-block;
+}
+
+h2 {
+    color: var(--sky-blue);
+}
+
+.lead {
+    font-size: 1.2rem;
+}
+
+.btn-success {
+    background-color: var(--sky-blue);
+    border: none;
+}
+
+.btn-success:hover {
+    background-color: #1c8db6;
+}
+
+.btn-danger {
+    background-color: #dc3545;
+    border: none;
+}
+p {
+    font-size:1.3rem;
+}
