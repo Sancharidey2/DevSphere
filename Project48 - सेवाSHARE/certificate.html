@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thank You - SevaShare</title>
+    <link rel="icon" type="image/png" href="seva1.png">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/style4.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="index.html">
+                <img src="images/seva.png" alt="SevaShare Logo" style="width: 40px; height: auto;">
+                सेवाSHARE
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" 
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="login.html">Login</a></li>
+                    <li class="nav-item"><a class="nav-link" href="ngo.html">Donate</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-5 text-center">
+        <h1 style=>Thank You for Visiting सेवाSHARE!</h1>
+        <p class="lead" style="font-size: 1.3rem;">We appreciate your support and participation.</p>
+        <p class="mb-4">As a token of our gratitude, you can download your Certificate of Appreciation below:</p>
+    
+        <!-- Certificate Preview -->
+        <div class="certificate-container mb-4">
+            <img src="images/reward.png" alt="Certificate Preview" class="img-fluid" style="max-width: 500px;">
+            <p class="mt-3"><strong>Certificate for: </strong> <span id="userName">[User's Name]</span></p>
+        </div>
+    
+        <!-- Buttons Section -->
+        <div class="d-flex justify-content-center">
+            <!-- Download Certificate Button -->
+            <a href="images/reward.png" class="btn btn-success me-2" download>Download Certificate</a>
+    
+            <!-- Logout Button -->
+            <a href="index.html" class="btn btn-success me-2" style="background-color:red">Log out</a>
+        </div>
+    </div>
+    <footer class="footer-section">
+        <div class="container-fluid">
+            <p>&copy; 2024 SevaShare | Emergency Resource Exchange</p>
+        </div>
+        <div class="row justify-content-center">
+            <!-- Helpline -->
+            <div class="col-md-4 mb-3 mb-md-0">
+                <p class="mb-0">
+                    <i class="bi bi-telephone-fill me-2" style="color: var(--sky-blue);"></i>
+                    <a href="tel:+1234567890" class="text-decoration-none text-dark">+1 (234) 567-890</a>
+                </p>
+            </div>
+            <!-- Email Address -->
+            <div class="col-md-5">
+                <p class="mb-0">
+                    <i class="bi bi-envelope-fill me-2" style="color: var(--sky-blue);"></i>
+                    <a href="mailto:support@sevashare.org" class="text-decoration-none text-dark">support@sevashare.org</a>
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    
+    <script>
+         function updateNGOs() {
+            const donationType = document.getElementById('donationType').value;
+            const ngos = document.querySelectorAll('#ngoList option');
+
+            // Show/Hide NGOs based on the selected donation type
+            ngos.forEach(ngo => {
+                if (ngo.classList.contains(donationType) || donationType === "others") {
+                    ngo.style.display = "block"; // Show this NGO
+                } else {
+                    ngo.style.display = "none"; // Hide this NGO
+                }
+            });
+
+            // Toggle "Others" input field
+            document.getElementById('otherDonationDiv').style.display = (donationType === 'others' ? 'block' : 'none');
+        }
+        function storeNGO() {
+        const ngoSelect = document.getElementById('ngoList');
+        const selectedNGO = ngoSelect.value;
+        const ngoUrl = ngoSelect.options[ngoSelect.selectedIndex].dataset.url;
+        localStorage.setItem('selectedNGO', selectedNGO);
+        localStorage.setItem('ngoUrl', ngoUrl);
+        }
+    </script>
+
+    <!-- Bootstrap JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
