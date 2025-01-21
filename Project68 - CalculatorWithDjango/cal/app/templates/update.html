@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="updatecourse2_b" method="post">
+{% csrf_token %}
+<!--<input type="text" name="cid" value="{{crs.id}}" readonly><br>-->
+        <input type="hidden" name="cid" value="{{Skey.id}}">
+        <input type="text" name="cnm" value="{{Skey.s_name1}}"><br>
+        <input type="text" name="cdur" value="{{Skey.s_name2}}"><br>
+        <input type="text" name="cout" value="{{Skey.s_out}}"><br>
+        <input type="Submit" value="Update"><br>
+    </form>
+</body>
+</html>
