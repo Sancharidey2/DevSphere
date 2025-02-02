@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>form builder</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <video src="Untitled video - Made with Clipchamp (1).mp4" autoplay muted loop id="myvideo"></video>
+    <!-- <div class="img-container">
+        <img height="100vh" width="100vw" id="bg-img" src="landscape-photography-cabin-near-forest.jpg" alt="bg-img">
+    </div> -->
+    <main>
+        <div class="left">
+            <form id="form">
+                <h1>Form Builder</h1>
+                <label for="text-input">
+                    <span>enter the text: </span>
+                    <input type="text" name="text-input" id="text-input" placeholder="enter here">
+                </label><br>
+                <label for="form-selection">select component</label>
+                <select id="drpdwn" name="form-selection">
+                    <option value="text">Text</option>
+                    <option value="email">Email</option>
+                    <option value="password">Password</option>
+                    <option value="number">Number</option>
+                    <option value="date">Date</option>
+                    <option value="time">Time</option>
+                    <option value="select">Select</option>
+                    <option value="radio">Radio</option>
+                    <option value="checkbox">Checkbox</option>
+                    <option value="textarea">Textarea</option>
+                    <option value="button">Button</option>
+               </select>
+                <br>
+                
+            </form>
+            <button id="submit">add</button>
+        </div>
+        <div class="right" id="output">
+            <h1>Output</h1>
+        </div>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,100 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-family: monospace;
+}
+#myvideo{
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+    z-index: -100;
+
+}
+/* #bg-img{
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+    z-index: -100;
+}
+.img-container{
+    position: ṇrelative;
+    /* width: 100%; */
+    /* height: 100vh; */
+    /* overflow: hidden; */
+/* body{
+    background: url(landscape-photography-cabin-near-forest.jpg) no-repeat center center/cover;
+    background-attachment: fixed;
+    height: 100vh;
+    overflow: hidden;
+} */
+main{
+    margin-top: 6vh;
+    margin-bottom: 6vh;
+    height: 88vh;
+
+    margin-left: 5vw;
+    margin-right: 5vw;
+    width: 90vw;
+
+    border-radius: 20px;
+    box-shadow: 0 0 5px 0 ;
+    background: inherit;
+    backdrop-filter: blur(5px);
+}
+.left{
+    float: left;
+    width: 30%;
+    height: 100%;
+    padding: 20px;
+    border-radius: 20px 0 0 20px;
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+}
+.right{
+    float: right;
+    width: 70%;
+    height: 100%;
+    padding: 20px;
+    border-radius: 0 20px 20px 0;
+    background: rgba(0, 0, 0, 0.5);
+    border-left: 3px solid rgba(255, 255, 255, 0.5);
+    color: white;
+    overflow: scroll;
+    scrollbar-width: none;
+}
+form h1{
+    text-align: center;
+    color: white;
+    font-size: 40px;
+    margin-bottom: 20px;
+}
+.left form label{
+    color: white;
+    font-size: 18px;
+}
+form input[type="text"], form select, form input[type="password"]{
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 5px;
+    border: none;
+    background: white;
+    color: black;
+}
+.left button{
+    margin-top: 3vh;
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    background: #1c8adb;
+    color: white;
+    font-size: 18px;
+    /* cursor: pointer; */
+}
