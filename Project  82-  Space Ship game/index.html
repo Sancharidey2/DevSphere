@@ -1,0 +1,30 @@
+!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, maximum-scale=1.0">
+  <title>Space Ship Bird</title>
+  <link rel="stylesheet" href="flappyBird_style.css">
+</head>
+<body>
+
+    <div id="particles-js"></div>
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    
+  <div id="game-container">
+    <img id="bird" src="https://cdna.artstation.com/p/assets/images/images/062/710/050/original/marvin-castillo-studiojk-battlescene-mediumship-export.gif?1683763649" alt="Bird">
+    <div id="score">0</div>
+  </div>
+
+   <!-- Game Over Message -->
+<div id="game-over" style="display: none; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
+    background: rgba(0, 0, 0, 0.8); color: white; padding: 20px; border-radius: 10px; text-align: center; z-index: 100;">
+    <h2>🚀Game Over!</h2>
+    <p>Your Score: <span id="final-score">0</span></p>
+    <button onclick="restartGame()" style="background: cyan; padding: 10px 20px; border: none; cursor: pointer; color: black;">Restart</button>
+</div>
+
+  <script src="flappyBird_script.js"></script>
+  <script src="stars.js"></script>
+</body>
+</html>
