@@ -6,7 +6,7 @@ function Fooddetail({ foodId }) {
   const [food, setFood] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
-  const API_KEY = "3da790224a7e41dba8f3b152862e5a53";
+  const API_KEY = import.meta.env.VITE_API_KEY; // Secure API key using environment variable
 
   useEffect(() => {
     async function fetchFood() {
@@ -27,7 +27,11 @@ function Fooddetail({ foodId }) {
       }
     }
 
-    fetchFood();
+    if (API_KEY) {
+      fetchFood();
+    } else {
+      console.error("API key is missing. Make sure to set it in the .env file.");
+    }
   }, [foodId]);
 
   if (loading) {
@@ -67,21 +71,22 @@ function Fooddetail({ foodId }) {
           <span> 💲 {food.pricePerServing / 100}</span>
         </div>
         <h3>Ingredients</h3>
-{food.extendedIngredients.map((item, index) => (
-  <div className={styles.item_container} key={index}>
-  <div className={styles.image_container}><img className={styles.imagess}
-      src={`https://spoonacular.com/cdn/ingredients_100x100/${item.image}`}
-      alt={item.name}
-    /> </div>
-    <div className={styles.name_container}>
-    <div className={styles.name}>{item.name}</div>
-    <div className={styles.amount}>
-      {item.amount} {item.unit}
-    </div>
-    </div>
-    
-  </div>
-))}
+        {food.extendedIngredients.map((item, index) => (
+          <div className={styles.item_container} key={index}>
+            <div className={styles.image_container}>
+              <img className={styles.imagess}
+                src={`https://spoonacular.com/cdn/ingredients_100x100/${item.image}`}
+                alt={item.name}
+              />
+            </div>
+            <div className={styles.name_container}>
+              <div className={styles.name}>{item.name}</div>
+              <div className={styles.amount}>
+                {item.amount} {item.unit}
+              </div>
+            </div>
+          </div>
+        ))}
         <h3>Instructions</h3>
         <div className={styles.recipeinstructions}>
           {food.analyzedInstructions[0] &&
