@@ -1,0 +1,169 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --primary-color: #111;
+  --secondary-color: #fff;
+  --accent-color: #ff4081;
+}
+
+html {
+  transition: background-color 0.5s ease-in-out, color 0.5s ease-in-out;
+}
+
+html.dark {
+  --primary-color: #fff;
+  --secondary-color: #222;
+  background-color: #181818;
+  color: var(--primary-color);
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  overflow: hidden;
+  background: var(--secondary-color);
+  color: var(--primary-color);
+  transition: all 0.5s ease-in-out;
+}
+
+.toggle {
+  cursor: pointer;
+  background: linear-gradient(45deg, var(--accent-color), #ff80ab);
+  color: #fff;
+  border: none;
+  border-radius: 30px;
+  padding: 12px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  position: absolute;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.toggle:hover {
+  transform: translateX(-50%) scale(1.1);
+}
+
+.toggle:focus {
+  outline: none;
+}
+
+.clock-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 20px;
+}
+
+.clock {
+  position: relative;
+  width: 220px;
+  height: 220px;
+  border: 6px solid var(--primary-color);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  background: radial-gradient(circle, rgba(255,255,255,0.1) 30%, rgba(0,0,0,0.1) 100%);
+}
+
+.needle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 3px;
+  transform-origin: bottom center;
+  transition: transform 0.5s ease-in-out;
+}
+
+.needle.hour {
+  height: 60px;
+  background: var(--primary-color);
+}
+
+.needle.minute {
+  height: 90px;
+  background: var(--primary-color);
+}
+
+.needle.second {
+  height: 100px;
+  background: var(--accent-color);
+}
+
+.center-point {
+  background: var(--accent-color);
+  width: 12px;
+  height: 12px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  box-shadow: 0 0 10px var(--accent-color);
+}
+
+.time {
+  font-size: 50px;
+  font-weight: 600;
+  animation: fadeIn 1s ease-in-out;
+}
+
+.date {
+  font-size: 16px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--primary-color);
+  animation: slideIn 1s ease-in-out;
+}
+
+.date .circle {
+  background: var(--primary-color);
+  color: var(--secondary-color);
+  border-radius: 50%;
+  height: 22px;
+  width: 22px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  font-weight: bold;
+  transition: all 0.5s ease-in;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
