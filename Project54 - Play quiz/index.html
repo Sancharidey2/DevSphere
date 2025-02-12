@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Play the Quiz</title>
+    <link
+    href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css"
+    rel="stylesheet"
+/>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- category container -->
+    <div class="config-container">
+        <h2 class="config-title">Welcome to the Quiz</h2>
+        
+        <div class="config-option">
+            <h4 class="option-title">Select Category</h4>
+            <div class="category-options">
+                <button class="category-option">Progamming</button>
+                <button class="category-option">Geography</button>
+                <button class="category-option">Mathematics</button>
+                <button class="category-option">Entertainment</button>
+            </div>
+        </div>
+
+        <div class="config-option">
+            <h4 class="option-title">No. of questions</h4>
+            <div class="Questions-options">
+                <button class="Questions-option">5</button>
+                <button class="Questions-option">10</button>
+                <button class="Questions-option">15</button>
+                <button class="Questions-option">20</button>
+                <button class="Questions-option">25</button>
+            </div>
+            
+        </div>
+
+        <button class="start-quiz-btn">Start Quiz</button>
+    </div>
+    
+    <!-- creating the quiz container -->
+    <div class="quiz-container">
+        <header class="quiz-header">
+            <h2 class="quiz-title">Quiz Application</h2>
+            <div class="quiz-timer">
+                <i class="ri-timer-line"></i>
+                <p class="time-duration">15s</p>
+            </div>
+        </header>
+
+        <div class="quiz-content">
+            <h1 class="question-text"><!--In javascript, how do you create a function--></h1>
+            <ul class="answer-options">
+                <li class="answer-option">
+                    <p>Create function myFunction()</p>
+                </li>
+                <li class="answer-option correct">
+                    <p>function myFunction()</p>
+                    <i class="ri-check-fill"></i>
+                </li>
+                <li class="answer-option incorrect">
+                    <p>def function myFunction()</p>
+                    <i class="ri-close-fill"></i>
+                </li>
+                <li class="answer-option">
+                    <p>func myFunction()</p>
+                </li>
+            </ul>
+        </div>
+
+        <div class="quiz-footer">
+            <p class="question-status"><b>2</b> of <b>10</b> Questions</p>
+            <button class="next-question-btn">
+                Next
+                <i class="ri-arrow-right-line"></i>
+            </button>
+        </div>
+    </div>
+
+    <!-- result container -->
+     <div class="result-container">
+        <p class="result-img">🎉</p>
+        <h2 class="result-title">Quiz completed</h2>
+        <p class="result-message"></p>
+        <button class="try-again-btn">Try again</button>
+     </div>
+
+     
+     <script src="questions.js"></script>
+     <script src="script.js"></script>
+</body>
+</html>

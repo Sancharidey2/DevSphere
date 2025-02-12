@@ -1,0 +1,272 @@
+:root {
+    /* Primary Colors */
+    --sky-blue: #2da9e7;
+    --light-steel-blue: #92a8d1;
+
+    /* Secondary Colors */
+    --light-cyan-blue: #80ced6;
+    --powder-blue: #b7d7e8;
+
+    /* Neutral Colors */
+    --dark-charcoal: #3b3a30;
+    --medium-gray: #b2b2b2;
+    --very-light-gray: #f0efef;
+
+    /* Accent Colors */
+    --light-greenish-gray: #ddeedd;
+    --light-lavender: #E6E6FA;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    color: var(--dark-charcoal); /* Consistent text color */
+    background-color: var(--very-light-gray); /* Subtle background */
+}
+
+header {
+    background-color: var(--very-light-gray);
+    padding: 50px;
+}
+
+h1 {
+    color: var(--dark-charcoal);
+    text-shadow: 1px 1px 3px rgba(255, 255, 255, 0.7);
+}
+
+h2 {
+    font-size: 2rem;
+    color: var(--sky-blue);
+    font-family: 'Times New Roman', Times, serif;
+    text-decoration:underline;
+    text-decoration-thickness: 1.5px;
+    text-underline-offset: 6px; 
+}
+
+p {
+    font-size: 1.2rem;
+    color: rgb(97, 97, 97);
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 1.3rem;
+}
+footer {
+    width: 100%; /* Ensure footer spans full width */
+    background-color: whitesmoke;
+    color: grey;
+    padding: 15px 0; /* Top and Bottom padding */
+    border-top: 4px solid var(--light-cyan-blue);
+    text-align: center;
+    margin: 0; /* Remove default margins */
+}
+
+.carousel {
+    height: auto;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 4px 15px #ddeedd;
+    background-color: var(--very-light-gray);
+}
+
+.carousel-inner img {
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.carousel-inner:hover img {
+    transform: scale(1.05);
+}
+
+.donate-section {
+    background-color: var(--light-greenish-gray); /* Optional: Add a background color */
+    border-radius: 10px;
+    padding: 30px;
+    transition: transform 0.2s;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.donate-section:hover {
+    transform: scale(1.02);
+}
+
+.btn-primary {
+    background-color: var(--sky-blue);
+    border: none;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn-primary:hover {
+    background-color: var(--light-cyan-blue);
+    transform: translateY(-2px);
+}
+
+.navbar {
+    transition: background-color 0.3s ease;
+    background-color: var(--sky-blue);
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 1.3rem;
+}
+.btn-chat {
+    background-color: white; /* Set background to white */
+    color: var(--dark-charcoal); /* Set text color to light cyan blue */
+    border: 2px solid var(--light-cyan-blue); /* Set border to light cyan blue */
+    font-size: 1.3rem;
+}
+
+.btn-chat:hover {
+    background-color: var(--light-cyan-blue); /* Change background on hover */
+    color: white; /* Change text color on hover */
+    transform: scale(1.05);
+}
+
+
+.nav-link {
+    color: var(--dark-charcoal);
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.nav-link:hover {
+    background-color: var(--light-cyan-blue);
+    color: var(--dark-charcoal);
+    border-radius: 5px;
+    transform: scale(1.05);
+}
+
+.about-us-section {
+    background-color: #E6E6FA;
+    display: flex; /* Flex layout for alignment */
+    justify-content: flex-start; /* Align content towards the left */
+    align-items: center; /* Vertically align logo and text */
+    padding: 20px; /* Control padding around the section */
+    margin-top: 30px;
+    margin-bottom: 30px; 
+    gap: 0px; /* Reduce gap between logo and text */
+}
+
+.about-us-section .col-md-6 {
+    flex: 1; /* Ensure logo and text take up equal space */
+    padding: 10px; /* Remove padding */
+    margin: 0; /* Remove margin */
+}
+
+.about-us-section img.logo-image {
+    max-width: auto; /* Ensure image uses available space */
+    height: auto; /* Maintain aspect ratio */
+    margin-right: 0px; /* Reduce gap between logo and text */
+}
+
+.about-us-section h2, .about-us-section p {
+    margin: 0; /* Remove margins */
+    padding: 10px; /* Remove padding */
+    text-align: left; /* Keep text aligned to the left */
+}
+
+
+.logo-image {
+    max-width: auto;
+    height: auto;
+    position: relative;
+    border-radius: 0px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    padding : 0px;
+    transition: transform 0.5s ease;
+}
+.logo-image:hover {
+    transform: scale(1.02);
+}
+
+
+
+.watermark {
+    position: absolute;
+    top: 90%;
+    left: 12%;
+    transform: translate(-50%, -50%);
+    font-size: 20px;
+    color: rgba(255, 255, 255, 0.61);
+    pointer-events: none;
+    text-align: left;
+    font-weight: bold;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    z-index: 1;
+}
+
+@media (max-width: 576px) {
+    header h1 {
+        font-size: 1.5rem;
+    }
+    .btn-chat {
+        font-size: 1rem;
+
+    }
+    .navbar-brand {
+        padding:0px;
+        margin : 0px 0px 0px 0px;
+    }
+    .navbar-collapse {
+        padding: 0px;
+        margin:0px 0px 0px 0px
+    }
+    .btn-chat {
+        font-size: 1.01rem;
+        padding:5px 0px 5px 0px;
+        margin:0px 0px 0px 0px;
+    }
+    div.container-fluid {
+        padding:0px 0px 0px 0px;
+    }
+    h2{
+        font-size: 1.3rem;
+    }
+    p{
+        font-size: 1rem;
+    }
+    .watermark {
+        font-size: 8px;
+    }
+    .donate-section {
+        margin-top: 0px;
+    }
+    h1 {
+        text-align: center;
+    }
+    .btn-primary{
+        margin-bottom:10px;
+    }
+}
+@media (max-width: 320px) {
+    .navbar-brand {
+        padding:0px;
+        margin : 0px 0px 0px 0px;
+    }
+    .navbar-collapse {
+        padding: 0px;
+        margin:0px 0px 0px 0px
+    }
+    .btn-chat {
+        font-size: 1.01rem;
+        padding:5px 0px 5px 0px;
+        margin:0px 0px 0px 0px;
+    }
+    div.container-fluid {
+        padding:0px 0px 0px 0px;
+    }
+    h2{
+        font-size: 1.3rem;
+    }
+    p{
+        font-size: 1rem;
+    }
+    .watermark {
+        font-size: 8px;
+    }
+    .donate-section {
+        margin-top: 0px;
+    }
+    h1 {
+        text-align: center;
+    }
+    .btn-primary{
+        margin-bottom:10px;
+    }
+}

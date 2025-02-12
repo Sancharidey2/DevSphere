@@ -9,23 +9,24 @@ let matchesCount = 0;
 // Create cards dynamically
 function createCards() {
     const cardsArray = [...colors, ...colors];
-    cardsArray.sort(() => 0.5 - Math.random()); // Shuffle cards
-    
+    cardsArray.sort(() => 0.5 - Math.random());                        // Shuffle cards
+
     cardsArray.forEach(color => {
         const cardElement = document.createElement('div');
         cardElement.classList.add('card');
-        
+        cardElement.setAttribute('data-color', color);               // Store color as an attribute
+
         // HTML structure of each card
-        const innerHTML = `
+        cardElement.innerHTML = `
             <div class="card-inner">
                 <div class="card-front"></div>
                 <div class="card-back" style="background-color:${color}"></div>
             </div>
         `;
-        cardElement.innerHTML = innerHTML;
+        cardElement.addEventListener('click', flipCard);                      // Assign event listener
         gameContainer.appendChild(cardElement);
     });
-    
+
     cards = document.querySelectorAll('.card');
 }
 
@@ -34,22 +35,24 @@ function flipCard(event) {
     if (lockBoard) return;
 
     const clickedCard = event.currentTarget;
+    if (clickedCard === firstCard) return;                          // Prevent double clicking the same card
+
     clickedCard.classList.add('flipped');
 
     if (!firstCard) {
         firstCard = clickedCard;
-    } else if (!secondCard) {
+    } else {
         secondCard = clickedCard;
-
+        lockBoard = true; 
         checkForMatch();
     }
 }
 
 // Check for matching cards
 function checkForMatch() {
-    lockBoard = true;
+    const isMatch = firstCard.getAttribute('data-color') === secondCard.getAttribute('data-color');
 
-    if (firstCard.children[0].innerHTML === secondCard.children[0].innerHTML) {
+    if (isMatch) {
         disableCards();
         updateScore();
     } else {
@@ -87,9 +90,3 @@ function resetBoard() {
 
 // Initialize the game
 createCards();
-gameContainer.addEventListener('click', function(event) {
-    const clickedCard = event.target.closest('.card');
-    if (clickedCard && !clickedCard.classList.contains('flipped')) {
-        flipCard({currentTarget: clickedCard});
-    }
-});

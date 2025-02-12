@@ -21,9 +21,8 @@ function formatDate(date) {
 }
 
 function updateTime() {
-    // Calculate current time based on base time and elapsed time
+    // Calculate current time based on base time and time offset
     const now = new Date(baseTime.getTime() + timeOffset);
-    timeOffset += 1000; // Increment by 1 second
 
     // Update date
     dateElement.textContent = formatDate(now);
@@ -35,7 +34,7 @@ function updateTime() {
     
     if (!is24Hour) {
         const period = hours >= 12 ? 'PM' : 'AM';
-        hours = hours % 12 || 12;
+        hours = hours % 12 || 12; // Convert 24-hour to 12-hour format
         timeElement.textContent = `${String(hours).padStart(2, '0')}:${minutes}:${seconds} ${period}`;
     } else {
         timeElement.textContent = `${String(hours).padStart(2, '0')}:${minutes}:${seconds}`;
@@ -44,10 +43,10 @@ function updateTime() {
 
 function toggleTheme() {
     isDarkTheme = !isDarkTheme;
-    document.body.classList.toggle('light-theme');
-    themeToggle.innerHTML = isDarkTheme ? 
-        '<i class="fas fa-moon"></i><span>Theme</span>' : 
-        '<i class="fas fa-sun"></i><span>Theme</span>';
+    document.body.classList.toggle('light-theme', !isDarkTheme);
+    themeToggle.innerHTML = isDarkTheme 
+        ? '<i class="fas fa-moon"></i><span>Theme</span>' 
+        : '<i class="fas fa-sun"></i><span>Theme</span>';
 }
 
 function updateTimezone() {
@@ -64,10 +63,14 @@ formatToggle.addEventListener('click', () => {
 });
 
 themeToggle.addEventListener('click', toggleTheme);
+
 timezoneSelect.addEventListener('change', updateTimezone);
 
 // Initial update
-updateTime();
+updateTimezone();
 
 // Update every second
-setInterval(updateTime, 1000);
+setInterval(() => {
+    timeOffset += 1000; // Increment by 1 second
+    updateTime();
+}, 1000);

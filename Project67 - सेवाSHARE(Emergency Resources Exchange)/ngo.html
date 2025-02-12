@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Donate to a Cause</title>
+    <link rel="icon" type="image/png" href="images/seva1.png">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/style1.css">
+    <!-- Select2 CSS for searchable dropdown -->
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+
+</head>
+<body>
+    <!-- Navbar for Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="index.html">
+                <img src="images/seva.png" alt="SevaShare Logo" style="width: 40px; height: auto;">
+                सेवाSHARE</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" 
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
+                </ul>
+            </div>
+            <a href="https://wa.me/1234567890" target="_blank" class="btn btn-chat d-flex align-items-center">
+                <i class="bi bi-headset me-2"></i> Chat with Us
+            </a>  
+        </div>
+    </nav>
+
+    <!-- Donation Form Section -->
+    <div class="container donate-section">
+        <h2 class="text-center">Donate to a Cause</h2>
+
+        <!-- Donation Type Dropdown -->
+        <div class="mb-4">
+            <label for="donationType" class="form-label" style="font-size: 1.4rem;">Select Donation Purpose:</label>
+            <select class="form-select" id="donationType" onchange="updateNGOs()" style="background-color: #E6E6FA;">
+                <option selected>-- Choose Donation Purpose --</option>
+                <option value="money">Money</option>
+                <option value="clothes">Clothes</option>
+                <option value="food">Food</option>
+                <option value="medical">Medical</option>
+                <option value="shelter">Shelter Materials</option>
+                <option value="others">Others</option> <!-- Added Others option -->
+            </select>
+        </div>
+
+        <!-- Input field for "Others" donation type, hidden by default -->
+        <div class="mb-4" id="otherDonationDiv" style="display: none;">
+            <label for="otherDonation" class="form-label" style="font-size: 1.4rem;">Specify Donation Purpose:</label>
+            <input type="text" class="form-control" id="otherDonation" placeholder="Specify your donation" style="background-color: #E6E6FA;">
+        </div>
+
+        <!-- Crisis Locations List -->
+        <div class="mb-4">
+            <label for="crisisLocation" class="form-label" style="font-size: 1.4rem;">Select Crisis Location:</label>
+            <select class="form-select" id="crisisLocation" style="background-color: #E6E6FA;">
+                <option selected>-- Choose a Location --</option>
+                <option value="location1">Location 1</option>
+                <option value="location2">Location 2</option>
+                <option value="location3">Location 3</option>
+            </select>
+        </div>
+
+        <!-- NGO List Based on Selection -->
+        <div class="mb-4">
+            <label for="ngoList" class="form-label" style="font-size: 1.4rem;">Select NGO For Donation:</label>
+            <select class="form-select" id="ngoList" style="background-color: #E6E6FA;" onchange="storeNGO()">
+                <option selected>-- Choose NGO --</option>
+                <option value="Goonj" class="money clothes food" data-url="https://goonj.org/">Goonj</option>
+                <option value="Akshaya Patra" class="money food" data-url="https://www.akshayapatra.org/">Akshaya Patra</option>
+                <option value="CARE" class="money food medical shelter" data-url=" https://careifoundation.org/">CARE</option>
+                <option value="Ramakrishna Mission" class="money clothes food education" data-url="https://belurmath.org/">Ramakrishna Mission</option>
+                <option value="Oxfam" class="money food medical shelter" data-url="https://www.oxfamindia.org/">Oxfam</option>
+                <option value="Habitat for Humanity" class="money shelter" data-url="https://www.habitat.org/ap">Habitat for Humanity</option>
+                <option value="Ekam Foundation" class="money medical" data-url="https://www.ekamoneness.org/">Ekam Foundation</option>
+                <option value="Society for a Bright Future" class="money clothes food education" data-url="https://sbfindia.org/">Society for a Bright Future</option>
+                <option value="Vivekananda Rural and Urban Development Association" class="money clothes education" data-url="https://www.idrf.org/swamivivekananda/">Vivekananda Rural and Urban Development Association</option>
+                <option value="Rapid Response" class="money food medical shelter" data-url="https://rapidresponse.org.in/">Rapid Response</option>
+                <option value="Hindrise" class="money medical" data-url="https://hindrise.org/">Hindrise</option>
+            </select>
+        </div>
+
+        <!-- Next Button -->
+        <div class="text-center mt-6">
+            <a href="login.html" class="btn btn-primary">Next</a>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer-section">
+        <div class="container-fluid">
+            <p>&copy; 2024 SevaShare | Emergency Resource Exchange</p>
+        </div>
+        <div class="row justify-content-center">
+            <!-- Helpline -->
+            <div class="col-md-4 mb-3 mb-md-0">
+                <p class="mb-0">
+                    <i class="bi bi-telephone-fill me-2" style="color: var(--sky-blue);"></i>
+                    <a href="tel:+1234567890" class="text-decoration-none text-dark">+1 (234) 567-890</a>
+                </p>
+            </div>
+            <!-- Email Address -->
+            <div class="col-md-5">
+                <p class="mb-0">
+                    <i class="bi bi-envelope-fill me-2" style="color: var(--sky-blue);"></i>
+                    <a href="mailto:support@sevashare.org" class="text-decoration-none text-dark">support@sevashare.org</a>
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- jQuery (Required for Select2) -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- Select2 JS for searchable dropdown -->
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+
+    <script>
+        function updateNGOs() {
+            const donationType = document.getElementById('donationType').value;
+            const ngos = document.querySelectorAll('#ngoList option');
+
+            // Show/Hide NGOs based on the selected donation type
+            ngos.forEach(ngo => {
+                if (ngo.classList.contains(donationType) || donationType === "others") {
+                    ngo.style.display = "block"; // Show this NGO
+                } else {
+                    ngo.style.display = "none"; // Hide this NGO
+                }
+            });
+
+            // Toggle "Others" input field
+            document.getElementById('otherDonationDiv').style.display = (donationType === 'others' ? 'block' : 'none');
+        }
+        function storeNGO() {
+        const ngoSelect = document.getElementById('ngoList');
+        const selectedNGO = ngoSelect.value;
+        const ngoUrl = ngoSelect.options[ngoSelect.selectedIndex].dataset.url;
+        localStorage.setItem('selectedNGO', selectedNGO);
+        localStorage.setItem('ngoUrl', ngoUrl);
+        }
+    </script>
+    <script src="//code.tidio.co/ewnq0vtyz0asb99wpfriwxbxbsybxcxw.js" async></script>
+</body>
+</html>

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Welcome!</title>
+    <style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color:#161e31 ;
+  color: aliceblue;
+}
+.conatiner {
+  border-radius: 20px;
+  position: relative;
+  width: 700px;
+  height: 500px;
+  align-items: center;
+  box-shadow: 0 0 8px 2px #3b4372f5, inset 0 0 20px #161e31;
+}
+    #right{
+        float: right ;
+        width: 50%;
+        height: 100%;
+        padding: 10px;
+        padding-left: 20px;
+        background-color:  #2d3250;
+        border-radius: inherit;
+
+    }
+    #left{
+        float: 50% left;
+        height: 100%;
+        border-radius: inherit;
+   
+    }
+    #l{
+        justify-self: center;
+        color: #ffd279;
+        margin-bottom: 8px;
+    }
+    .a{
+       
+        padding-top:80px;
+        font-size: 40px;
+        color: #ffd279;
+        font-family: "Comic Sans MS" ,cursive, sans-serif;
+  font-style: italic;
+
+    }
+    .form-control {
+  position: relative;
+  margin: 30px 0px;
+  border-bottom: 2px solid #ffd279;
+  width: 70%;
+}
+
+    button{
+    margin-left: 15%;
+    background-color: #ffd279 ;
+    width: 50%;
+    color:black;
+    padding:10px;
+    border:none;
+    border-radius:10px;
+    text-align:center;
+    font-size:15px;
+    font-style:Italic;
+    margin-top:14px;
+    margin-bottom:14px;
+
+    }
+    label {
+      font-size: 20px;
+      color: #ffd279;
+    }
+    input{
+      border-top: none;
+      border-right: none;
+      border-left: none;
+      background-color: #2d3250;
+      height: 27px;
+      padding: 6px;
+      font-style: italic;
+      font-size: 18px;
+    }
+    </style>
+  </head>
+  <body>
+  <div class="conatiner">
+      <div class="c" id="right">
+                  <h1 id="l">Sign in </h1>
+                      <form action="signin" method="POST">
+                          {% csrf_token %} {{ufrm}}
+                          <button  class="btn btn-outline-success" ><h3>Submit</h3> </button>
+                          <p>Already have an account ? <a style="color: burlywood; font-size: 20px;" href="displaylogin">Login</a></p>
+                        </form>
+      </div>
+      <div class="c" id ="left">
+      <pre class="a">
+              
+        Welcome
+           to
+        Shopy !!!        
+          </pre>
+      </div>
+  </div>
+  </body>
+</html>

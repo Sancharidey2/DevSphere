@@ -1,0 +1,114 @@
+/* Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300;600&display=swap');
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: linear-gradient(135deg, #1e1e2f, #2a2a40);
+  font-family: 'Nunito', sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+  color: #fff;
+  padding: 20px;
+}
+
+/* Main Container */
+.container {
+  display: flex;
+  gap: 20px;
+  padding: 20px;
+  max-width: 900px;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 10px;
+  box-shadow: 0px 0px 15px rgba(255, 255, 255, 0.1);
+  overflow: hidden;
+}
+
+/* Sidebar */
+aside {
+  padding: 15px;
+  width: 280px;
+  border-right: 2px solid rgba(255, 255, 255, 0.2);
+}
+
+button {
+  cursor: pointer;
+  background: linear-gradient(135deg, #00c6ff, #0072ff);
+  border: none;
+  border-radius: 8px;
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 15px;
+  font-weight: bold;
+  font-size: 16px;
+  color: #fff;
+  transition: all 0.3s ease-in-out;
+}
+
+button:hover {
+  transform: scale(1.05);
+  background: linear-gradient(135deg, #0072ff, #00c6ff);
+}
+
+/* Main Content */
+main {
+  flex: 1;
+  padding: 15px;
+}
+
+/* Titles */
+h2 {
+  border-bottom: 2px solid rgba(255, 255, 255, 0.3);
+  padding-bottom: 10px;
+  font-weight: 600;
+  font-size: 24px;
+  display: flex;
+  justify-content: space-between;
+}
+
+h3 {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 12px;
+  font-weight: 600;
+  border-radius: 5px;
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-between;
+}
+
+/* Person List */
+.person {
+  display: flex;
+  justify-content: space-between;
+  font-size: 18px;
+  padding: 10px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 5px;
+  margin-bottom: 8px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  aside {
+    width: 100%;
+    border-right: none;
+  }
+
+  button {
+    padding: 10px;
+    font-size: 14px;
+  }
+}

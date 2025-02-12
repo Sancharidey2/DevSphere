@@ -306,9 +306,7 @@ let wrongAnswers = 0;
 const categoryCards = document.querySelectorAll('.category-card');
 categoryCards.forEach(card => {
     card.addEventListener('click', () => {
-        // Remove selection from other cards
         categoryCards.forEach(c => c.classList.remove('selected'));
-        // Select this card
         card.classList.add('selected');
         selectedCategory = card.dataset.category;
     });
@@ -317,12 +315,8 @@ categoryCards.forEach(card => {
 // Get time limit based on difficulty
 function getTimeLimit() {
     const difficulty = difficultySelect.value;
-    switch(difficulty) {
-        case 'easy': return 60;
-        case 'medium': return 45;
-        case 'hard': return 30;
-        default: return 60;
-    }
+    const timeLimits = { easy: 60, medium: 45, hard: 30 };
+    return timeLimits[difficulty] || 60;
 }
 
 // Start quiz
@@ -332,44 +326,48 @@ function startQuiz() {
         return;
     }
 
-    // Get selected number of questions
     const numQuestions = parseInt(numQuestionsSelect.value);
-    
-    // Get questions for selected category
     const categoryQuestions = quizData[selectedCategory].questions;
-    
-    // Shuffle and slice questions based on selected number
-    questions = [...categoryQuestions]
-        .sort(() => Math.random() - 0.5)
-        .slice(0, numQuestions);
+    questions = shuffleArray([...categoryQuestions]).slice(0, numQuestions);
 
     startScreen.classList.add('hidden');
     quizScreen.classList.remove('hidden');
-    
-    // Reset quiz state
+
+    resetQuizState();
+
+    updateUI();
+    loadQuestion();
+    startTimer();
+    updateProgressBar();
+}
+
+// Shuffle array function
+function shuffleArray(array) {
+    return array.sort(() => Math.random() - 0.5);
+}
+
+// Reset quiz state
+function resetQuizState() {
     currentQuestion = 0;
     score = 0;
     correctAnswers = 0;
     wrongAnswers = 0;
     timeLeft = getTimeLimit();
     startTime = Date.now();
-    
-    // Update UI
+}
+
+// Update UI elements
+function updateUI() {
     scoreEl.textContent = score;
     timeEl.textContent = timeLeft;
     totalQuestionsEl.textContent = questions.length;
     maxPossibleEl.textContent = questions.length * 10;
-    
-    // Update category badge
+
     const category = quizData[selectedCategory];
     categoryBadgeEl.innerHTML = `
         <i class="fas ${category.icon}"></i>
         <span>${category.name}</span>
     `;
-    
-    loadQuestion();
-    startTimer();
-    updateProgressBar();
 }
 
 // Load question
@@ -377,23 +375,17 @@ function loadQuestion() {
     const question = questions[currentQuestion];
     currentQuestionEl.textContent = currentQuestion + 1;
     questionEl.textContent = question.question;
-    
+
     choicesEl.innerHTML = '';
     question.choices.forEach((choice, index) => {
         const button = document.createElement('button');
         button.className = 'choice-btn';
-        button.innerHTML = `${choice}`;  
-        
+        button.innerHTML = `${choice}`;
+
         button.addEventListener('click', () => checkAnswer(index));
-        
-        // Add hover effect
-        button.addEventListener('mouseover', () => {
-            button.style.transform = 'translateX(10px)';
-        });
-        button.addEventListener('mouseout', () => {
-            button.style.transform = 'translateX(0)';
-        });
-        
+        button.addEventListener('mouseover', () => button.style.transform = 'translateX(10px)');
+        button.addEventListener('mouseout', () => button.style.transform = 'translateX(0)');
+
         choicesEl.appendChild(button);
     });
 }
@@ -402,42 +394,22 @@ function loadQuestion() {
 function checkAnswer(choiceIndex) {
     const correct = questions[currentQuestion].correct;
     const buttons = choicesEl.getElementsByClassName('choice-btn');
-    
-    // Disable all buttons
-    Array.from(buttons).forEach(button => {
-        button.disabled = true;
-    });
-    
-    // Update correct/wrong answers count
+
+    Array.from(buttons).forEach(button => button.disabled = true);
+
     if (choiceIndex === correct) {
         correctAnswers++;
         score += 10;
         scoreEl.textContent = score;
         buttons[choiceIndex].classList.add('correct');
-        // Add score animation
-        scoreEl.style.transform = 'scale(1.2)';
-        setTimeout(() => {
-            scoreEl.style.transform = 'scale(1)';
-        }, 200);
+        animateScore();
     } else {
         wrongAnswers++;
         buttons[choiceIndex].classList.add('wrong');
         buttons[correct].classList.add('correct');
     }
-    
-    // Show explanation
-    const explanationDiv = document.createElement('div');
-    explanationDiv.className = 'explanation';
-    explanationDiv.textContent = questions[currentQuestion].explanation;
-    explanationDiv.style.opacity = '0';
-    choicesEl.appendChild(explanationDiv);
-    
-    // Fade in explanation
-    setTimeout(() => {
-        explanationDiv.style.opacity = '1';
-    }, 100);
-    
-    // Move to next question after delay
+
+    showExplanation();
     setTimeout(() => {
         currentQuestion++;
         if (currentQuestion < questions.length) {
@@ -447,6 +419,25 @@ function checkAnswer(choiceIndex) {
             endQuiz();
         }
     }, 2000);
+}
+
+// Animate score
+function animateScore() {
+    scoreEl.style.transform = 'scale(1.2)';
+    setTimeout(() => {
+        scoreEl.style.transform = 'scale(1)';
+    }, 200);
+}
+
+// Show explanation
+function showExplanation() {
+    const explanationDiv = document.createElement('div');
+    explanationDiv.className = 'explanation';
+    explanationDiv.textContent = questions[currentQuestion].explanation;
+    explanationDiv.style.opacity = '0';
+    choicesEl.appendChild(explanationDiv);
+
+    setTimeout(() => explanationDiv.style.opacity = '1', 100);
 }
 
 // Update progress bar
@@ -460,12 +451,12 @@ function startTimer() {
     timer = setInterval(() => {
         timeLeft--;
         timeEl.textContent = timeLeft;
-        
-        // Add pulse animation when time is low
-        if (timeLeft <= 10) {
+
+        if (timeLeft <= 10 && !timeEl.classList.contains('pulse')) {
             timeEl.style.animation = 'pulse 1s infinite';
+            timeEl.classList.add('pulse');
         }
-        
+
         if (timeLeft <= 0) {
             endQuiz();
         }
@@ -477,33 +468,30 @@ function endQuiz() {
     clearInterval(timer);
     quizScreen.classList.add('hidden');
     endScreen.classList.remove('hidden');
-    
+
     const timeTaken = Math.round((Date.now() - startTime) / 1000);
     const category = quizData[selectedCategory];
-    
-    // Update end screen
+
     finalScoreEl.textContent = score;
     categoryResultEl.textContent = `Category: ${category.name}`;
     correctAnswersEl.textContent = correctAnswers;
     wrongAnswersEl.textContent = wrongAnswers;
     timeTakenEl.textContent = timeTaken;
-    
-    // Set result message based on score
-    let message = '';
+
+    setResultMessage();
+}
+
+// Set result message based on score
+function setResultMessage() {
     const percentage = (score / (questions.length * 10)) * 100;
+    let message = '';
     
-    if (percentage === 100) {
-        message = "Perfect score! You're a genius! 🎉";
-    } else if (percentage >= 80) {
-        message = "Excellent work! You're very knowledgeable! 🌟";
-    } else if (percentage >= 60) {
-        message = "Good job! Keep learning! 👍";
-    } else if (percentage >= 40) {
-        message = "Not bad! Room for improvement! 📚";
-    } else {
-        message = "Keep practicing! You'll do better next time! 💪";
-    }
-    
+    if (percentage === 100) message = "Perfect score! You're a genius! 🎉";
+    else if (percentage >= 80) message = "Excellent work! You're very knowledgeable! 🌟";
+    else if (percentage >= 60) message = "Good job! Keep learning! 👍";
+    else if (percentage >= 40) message = "Not bad! Room for improvement! 📚";
+    else message = "Keep practicing! You'll do better next time! 💪";
+
     resultMessageEl.textContent = message;
 }
 
@@ -513,9 +501,7 @@ function goHome() {
     startScreen.classList.remove('hidden');
     selectedCategory = null;
     categoryCards.forEach(card => card.classList.remove('selected'));
-    // Reset progress bar
     progressBar.style.width = '0%';
-    // Reset timer animation
     timeEl.style.animation = '';
 }
 
@@ -524,13 +510,13 @@ startBtn.addEventListener('click', startQuiz);
 restartBtn.addEventListener('click', startQuiz);
 homeBtn.addEventListener('click', goHome);
 
-// Add keyboard navigation
+// Keyboard navigation
 document.addEventListener('keydown', (e) => {
     if (quizScreen.classList.contains('hidden')) return;
-    
+
     const buttons = choicesEl.getElementsByClassName('choice-btn');
     if (buttons.length === 0 || buttons[0].disabled) return;
-    
+
     if (e.key >= '1' && e.key <= '4') {
         const index = parseInt(e.key) - 1;
         if (index < buttons.length) {

@@ -4,22 +4,24 @@ let documentsList = document.querySelector(".documents-list");
 let pdfMessage = document.getElementById("pdfMessage");
 
 function Add() {
-    if (task.value == "") {
-        alert("Please enter a task");
-    } else {
-        let newelement = document.createElement("li");
-        newelement.innerHTML = newtask.value + '<i class="fa-solid fa-trash"></i>' + '<a>&#10003</a>';
-        container.appendChild(newelement);
-        task.value = "";
-        newelement.querySelector("i").addEventListener("click", remove);
-        function remove() {
-            newelement.remove();
-        }
-        newelement.querySelector("a").addEventListener("click", strike);
-        function strike() {
-            newelement.style.textDecoration = "line-through";
-        }
+    if (task.value.trim() === "") {
+        alert("Please enter a task.");
+        return;
     }
+    let listItem = document.createElement("li");
+    listItem.innerHTML = `
+        ${task.value}
+        <i class="fa-solid fa-trash" title="Delete"></i>
+        <a title="Mark Complete">&#10003;</a>
+    `;
+    container.appendChild(listItem);
+    task.value = "";
+
+    listItem.querySelector("i").addEventListener("click", () => listItem.remove());
+    listItem.querySelector("a").addEventListener("click", () => {
+        listItem.style.textDecoration = "line-through";
+        listItem.style.color = "#999";
+    });
 }
 
 function saveAsPDF() {
@@ -66,9 +68,10 @@ function showDocuments() {
     document.getElementById("home-tab").style.display = "none";
     document.getElementById("documents-tab").style.display = "block";
 }
+
 function back() {
-    document.getElementById("documents-tab").style.display = "none"; 
-    document.getElementById("home-tab").style.display = "block"; 
+    document.getElementById("documents-tab").style.display = "none";
+    document.getElementById("home-tab").style.display = "block";
 }
 
 function showPDFMessage() {

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enhanced CAPTCHA</title>
+    <link rel="stylesheet" href="captcha.css">
+</head>
+<body>
+    <div class="container">
+        <header>CAPTCHA</header>
+        <p>Select CAPTCHA type:</p>
+        <select id="captchaType">
+            <option value="text">Text</option>
+            <option value="image">Image</option>
+            <option value="audio">Audio</option>
+            <option value="math">Math</option>
+        </select>
+        <div id="captchaContainer"></div>
+        <div class="textcaptcha">
+            <input type="text" placeholder="Enter CAPTCHA">
+        </div>
+        <button class="refresh">↻</button>
+        <p class="result"></p>
+        <div class="button">
+            <button>Submit CAPTCHA</button>
+        </div>
+    </div>
+    <script src="captcha.js"></script>
+</body>
+</html>

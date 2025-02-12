@@ -1,0 +1,157 @@
+:root {
+    /* Primary Colors */
+    --sky-blue: #2da9e7;
+    --light-steel-blue: #92a8d1;
+
+    /* Secondary Colors */
+    --light-cyan-blue: #80ced6;
+    --powder-blue: #b7d7e8;
+
+    /* Neutral Colors */
+    --dark-charcoal: #3b3a30;
+    --medium-gray: #b2b2b2;
+    --very-light-gray: #f0efef;
+
+    /* Accent Colors */
+    --light-greenish-gray: #ddeedd;
+    --light-lavender: #E6E6FA;
+}
+
+body {
+    font-family: 'Times New Roman', Times, serif;
+    background-color: var(--very-light-gray);  
+    margin: 0; /* Reset default margins */
+}
+
+.navbar {
+    background-color: var(--sky-blue);
+    font-size: 1.3rem;
+    transition: background-color 0.3s ease;
+}
+
+.nav-link {
+    color: var(--dark-charcoal);
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.nav-link:hover {
+    background-color: var(--light-cyan-blue);
+    color: var(--dark-charcoal);
+    border-radius: 5px;
+    transform: scale(1.05);
+}
+
+.btn-chat {
+    background-color: white; 
+    color: var(--dark-charcoal); 
+    border: 2px solid var(--light-cyan-blue); 
+    font-size: 1.3rem;
+    transition: transform 0.3s ease;
+}
+
+.btn-chat:hover {
+    background-color: var(--light-cyan-blue); 
+    color: white; 
+    transform: scale(1.05);
+}
+
+.donate-section {
+    margin-top: 40px;
+    background-color: white;
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 40px;
+    box-shadow: 0 0 20px rgba(221, 238, 221, 0.5);
+}
+
+h2 {
+    color: var(--sky-blue);
+    text-decoration: underline;
+    margin-bottom: 30px;
+    text-underline-offset: 6px; 
+    font-size: 2rem;
+}
+
+label {
+    color: var(--dark-charcoal);
+    font-size: 1.2rem;
+}
+
+.form-select {
+    font-size: 1.1rem;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid var(--medium-gray); /* Border for dropdown */
+}
+
+.btn-primary {
+    background-color: var(--sky-blue);
+    border: none;
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: #208dc6;
+    transform: scale(1.05);  
+}
+
+footer {
+    width: 100%; 
+    background-color: whitesmoke;
+    color: grey;
+    padding: 15px 0; 
+    border-top: 4px solid var(--light-cyan-blue);
+    text-align: center;
+    font-size: 1.3rem;
+}
+
+header {
+    background-color: var(--very-light-gray);
+    padding: 50px;
+}
+
+option {
+    background-color: #f7f7f7;
+}
+
+@media (max-width: 576px) {
+    header h1 {
+        font-size: 1.5rem;
+    }
+    .btn-chat, .btn-primary {
+        font-size: 1rem;
+    }
+    .navbar-brand, .navbar-collapse {
+        padding: 0;
+        margin: 0;
+    }
+}
+
+@media (max-width: 768px) {
+    .donate-section {
+        padding: 20px;
+    }
+
+    h2 {
+        font-size: 1.8rem;
+    }
+
+    label {
+        font-size: 1rem;
+    }
+
+    .form-select, .btn-primary {
+        font-size: 1rem;
+        padding: 8px 16px;
+    }
+}
+
+@media (max-width: 320px) {
+    .btn-chat {
+        font-size: 1rem;
+        padding: 5px 0;
+    }
+}
