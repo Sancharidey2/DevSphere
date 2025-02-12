@@ -1,0 +1,104 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(135deg, #ff00ff, #00ffff); /* Gradient background */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  color: #fff;
+  box-shadow: 0 0 30px rgba(255, 0, 255, 0.6); /* Glow effect around the page */
+  transition: all 0.3s ease-in-out;
+}
+
+/* Updated Header */
+h1 {
+  color: #f5f5f5;
+  font-size: 28px;
+  margin-bottom: 20px;
+  text-shadow: 0px 0px 10px rgba(255, 0, 255, 0.8); /* Glow effect on text */
+}
+
+/* Video Player Screen */
+.screen {
+  cursor: pointer;
+  width: 65%;
+  background-color: #000;
+  border-radius: 12px;
+  box-shadow: 0px 4px 15px rgba(255, 255, 255, 0.2);
+  overflow: hidden;
+}
+
+/* Controls Bar */
+.controls {
+  background: #222; /* Darker tone for better contrast */
+  color: #fff;
+  width: 65%;
+  border-radius: 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 15px;
+  box-shadow: 0px 4px 10px rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease-in-out;
+}
+
+/* Control Buttons */
+.controls .btn {
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  font-size: 20px;
+  transition: all 0.3s ease-in-out;
+}
+
+/* Hover effect for control buttons */
+.controls .btn:hover {
+  transform: scale(1.2);
+}
+
+/* Play Button */
+.controls .fa-play {
+  color: #4CAF50; /* Bright green for play */
+  text-shadow: 0px 0px 10px rgba(76, 175, 80, 0.8); /* Green glow for play button */
+}
+
+/* Stop Button */
+.controls .fa-stop {
+  color: #E74C3C; /* Red for stop */
+  text-shadow: 0px 0px 10px rgba(231, 76, 60, 0.8); /* Red glow for stop button */
+}
+
+/* Pause Button */
+.controls .fa-pause {
+  color: #FFD700; /* Yellow for pause */
+  text-shadow: 0px 0px 10px rgba(255, 215, 0, 0.8); /* Yellow glow for pause button */
+}
+
+/* Timestamp */ 
+.controls .timestamp {
+  color: #fff;
+  font-weight: 600;
+  font-size: 16px;
+}
+
+/* Remove Focus Outline */
+.btn:focus {
+  outline: none;
+}
+
+/* Responsive Design */
+@media (max-width: 800px) {
+  .screen,
+  .controls {
+    width: 90%;
+  }
+}
