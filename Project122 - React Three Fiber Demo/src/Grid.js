@@ -1,0 +1,34 @@
+import { useFrame, useLoader } from "@react-three/fiber";
+import { useEffect } from "react";
+import { RepeatWrapping, TextureLoader } from "three";
+
+export function FloatingGrid(){
+    const diffuse = useLoader(TextureLoader, process.env.PUBLIC_URL + "textures/grid-texture.png");
+
+    useEffect(()=>
+    {
+        diffuse.wrapS = RepeatWrapping;
+        diffuse.wrapT = RepeatWrapping;
+        diffuse.anisotropy = 16;
+        diffuse.repeat.set(30,30);
+        diffuse.offset.set(0,0);
+    },[diffuse]);
+
+    useFrame((state,delta)=>{
+        let t= state.clock.getElapsedTime() * 0.98;
+        diffuse.offset.set(0,t);
+    })
+
+    return <>
+        <mesh rotation-y={Math.PI} rotation-x = {Math.PI * 0.5} position={[0,0.01,0]}>
+            <planeGeometry args={[35,35]}/>
+            <meshBasicMaterial
+            color={[10,10,10]}
+            opacity={1}
+            map={diffuse}
+            alphaMap={diffuse}
+            transparent={true}
+            />
+        </mesh>
+    </>
+}
