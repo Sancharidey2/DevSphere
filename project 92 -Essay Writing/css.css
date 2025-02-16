@@ -1,0 +1,44 @@
+html, body {
+	margin: 0px;
+	padding: 0px;
+	font-family: "Open Sans", sans-serif;
+}
+
+#mainTextArea {
+	font-size: 2.5vmin;
+	font-family: "Open Sans", sans-serif;
+}
+
+#contentCenterer {
+	width: 100vw;
+	height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+}
+
+.ui-menu-item {
+	width: calc(95vw + 3.5vmax);
+}
+
+.ui-selectmenu-button.ui-button {
+	white-space: normal;
+	height: 2.5em;
+	vertical-align: middle;
+}
+
+#noteBox {
+	width: calc(95vw + 3.5vmax);
+}
+
+#essayButton {
+	width: 3.5vmax;
+	height: 3.5vmax;
+}
+
+#subflex_questionbar {
+	display: flex;
+	align-items: center;
+	flex-direction: row;
+}
