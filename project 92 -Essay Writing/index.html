@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-126821181-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-126821181-1');
+</script>
+
+<title>College Essay Writer</title>
+<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="jquery-ui.css"/>
+<link rel="stylesheet" type="text/css" href="css.css"/>
+<script src="jquery-3.3.1.min.js"></script>
+<script src="jquery-ui.min.js"></script>
+</head>
+<body>
+	<div id="contentCenterer">
+		<br/>
+		<div id="subflex_questionbar">
+			<select id="questions">
+				<option>1. Some students have a background, identity, interest, or talent that is so meaningful they believe their application would be incomplete without it. If this sounds like you, then please share your story.</option>
+				<option>2. The lessons we take from obstacles we encounter can be fundamental to later success. Recount a time when you faced a challenge, setback, or failure. How did it affect you, and what did you learn from the experience?</option>
+				<option>3. Reflect on a time when you questioned or challenged a belief or idea. What prompted your thinking? What was the outcome?</option>
+				<option>4. Describe a problem you've solved or a problem you'd like to solve. It can be an intellectual challenge, a research query, an ethical dilemma - anything that is of personal importance, no matter the scale. Explain its significance to you and what steps you took or could be taken to identify a solution.</option>
+				<option>5. Discuss an accomplishment, event, or realization that sparked a period of personal growth and a new understanding of yourself or others.</option>
+				<option>6. Describe a topic, idea, or concept you find so engaging that it makes you lose all track of time. Why does it captivate you? What or who do you turn to when you want to learn more?</option>
+				<option>7. Share an essay on any topic of your choice. It can be one you've already written, one that responds to a different prompt, or one of your own design.</option>
+			</select>
+			<input type="button" id="essayButton" onclick="newEssay();" value="NEW"></input>
+		</div>
+		<br/>
+		<input id="noteBox" type="text" placeholder="Notes?"></input>
+		<p id="infoBox">Word Count: ??? | Character Count: ???</p>
+		<br/>
+		<textarea id="mainTextArea" rows="25" cols="80" placeholder="Start writing...!" autofocus></textarea>
+		<br/>
+	</div>
+</body>
+<script src="script.js"></script>
+</html>
