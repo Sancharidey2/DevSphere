@@ -1,0 +1,36 @@
+body{
+	background:#222;
+	margin:20px;
+	background-image: url(space-.jpg);
+}
+svg{
+	width:100%;
+	height:100%;
+	position:fixed;
+	top:0;
+	left:0;
+}
+span{
+	color:rgb(138, 26, 26);
+	font-family:sans-serif;
+	/* opacity:.3; */
+	font-weight: 800;
+
+}
+.container {
+	width: 95vw;
+	height: 95vh;
+	background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 40%, rgba(0, 255, 255, 0.3) 70%, rgba(0, 0, 0, 0) 100%);
+	border-radius: 15px;
+	box-shadow: 0 0 25px rgba(0, 255, 255, 1);
+	animation: glow 1.5s infinite alternate;
+  }
+
+  @keyframes glow {
+	0% {
+	  box-shadow: 0 0 25px rgba(0, 255, 255, 1), 0 0 50px rgba(0, 255, 255, 0.5);
+	}
+	100% {
+	  box-shadow: 0 0 25px rgba(0, 255, 255, 1), 0 0 100px rgba(0, 255, 255, 0.9);
+	}
+  }
