@@ -1,0 +1,70 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #954c8d;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  .container {
+    width: 80%;
+    max-width: 1000px;
+    background-color: #c99ecd;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  h1 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .expense-form {
+    margin-bottom: 30px;
+  }
+  
+  .expense-form input, .expense-form select, .expense-form button {
+    padding: 10px;
+    margin: 5px;
+    width: 100%;
+    max-width: 300px;
+    margin-right: 10px;
+  }
+  
+  button {
+    background-color: #39983c;
+    color: white;
+    border: none;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #0b620f;
+  }
+  
+  .finance-dashboard {
+    text-align: center;
+  }
+  
+  .chart-container {
+    max-width: 500px;
+    margin: 20px auto;
+  }
+  
+  #budget-warning {
+    color: red;
+    font-weight: bold;
+  }
+  
+  h3, h4 {
+    margin: 10px 0;
+  }
+  
