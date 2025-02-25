@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Starry Night Background</title>
+    <style>
+        body {
+            margin: 0;
+            height: 100vh;
+            background: radial-gradient(circle at bottom, #091540, #020c1b);
+            overflow: hidden;
+            position: relative;
+        }
+
+        .star {
+            position: absolute;
+            background: white;
+            border-radius: 50%;
+            opacity: 0.8;
+            animation: twinkle 2s infinite alternate ease-in-out;
+        }
+
+        @keyframes twinkle {
+            0% { opacity: 0.5; }
+            100% { opacity: 1; }
+        }
+
+        .shooting-star {
+            position: absolute;
+            width: 2px;
+            height: 50px;
+            background: white;
+            opacity: 0.8;
+            transform: rotate(-45deg);
+            animation: shooting 3s linear infinite;
+        }
+
+        @keyframes shooting {
+            0% { top: -10%; left: 80%; opacity: 1; }
+            100% { top: 100%; left: 20%; opacity: 0; }
+        }
+    </style>
+</head>
+<body>
+    <script>
+        function createStar() {
+            const star = document.createElement("div");
+            star.classList.add("star");
+            document.body.appendChild(star);
+
+            const size = Math.random() * 3 + "px";
+            star.style.width = size;
+            star.style.height = size;
+            star.style.left = Math.random() * 100 + "vw";
+            star.style.top = Math.random() * 100 + "vh";
+            star.style.animationDuration = Math.random() * 3 + 2 + "s";
+
+            setTimeout(() => { star.remove(); }, 5000);
+        }
+
+        function createShootingStar() {
+            const shootingStar = document.createElement("div");
+            shootingStar.classList.add("shooting-star");
+            document.body.appendChild(shootingStar);
+
+            shootingStar.style.left = Math.random() * 100 + "vw";
+            shootingStar.style.top = Math.random() * 100 + "vh";
+            shootingStar.style.animationDuration = Math.random() * 5 + 3 + "s";
+
+            setTimeout(() => { shootingStar.remove(); }, 5000);
+        }
+
+        setInterval(createStar, 300);
+        setInterval(createShootingStar, 4000);
+    </script>
+</body>
+</html>
