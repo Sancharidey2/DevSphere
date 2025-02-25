@@ -1,0 +1,51 @@
+<html>
+  <head>
+    <title>Travelnetics</title>
+
+    <link rel="stylesheet" type="text/css" href="./style.css" />
+  </head>
+  <body>
+    <div class="pac-card" id="pac-card">
+      <div>
+        <div id="title">Search for Waypoints</div>
+        <br />
+      </div>
+      <div id="pac-container">
+        <input id="pac-input" type="text" placeholder="Enter a location" />
+      </div>
+    </div>
+
+    <div id="map"></div>
+
+    <!-- Searched data -->
+    <ul id="waypoints-list">
+    </ul>
+    <div id="infowindow-content">
+      <span id="place-name" class="title"></span><br />
+      <span id="place-address"></span>
+    </div>
+
+    <div id="return-to-origin-div">
+      <label>Return to Origin?
+        <input id="return-to-origin" type="checkbox" checked>
+      </label>
+    </div>
+
+    <div id="button-div">
+      <button id="goto-result">Calculate Best Route!</button>
+    </div>
+
+    <!-- 
+     The `defer` attribute causes the callback to execute after the full HTML
+     document has been parsed. For non-blocking uses, avoiding race conditions,
+     and consistent behavior across browsers, consider loading using Promises
+     with https://www.npmjs.com/package/@googlemaps/js-api-loader.
+    -->
+    <script src="./config.js"></script>
+    <script src="./map.js"></script>
+<script defer>
+    window.initMap = initMap;
+    window.onload = loadScript;
+</script>
+  </body>
+</html>
