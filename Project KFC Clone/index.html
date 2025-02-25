@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>KFC</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+
+</head>
+
+<body id="body">
+
+  <div id="mySidenav" class="sidenav">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()"> ×</a>
+    <p>About</p>
+    <p>Services</p>
+    <p>Clients</p>
+    <p>Contact</p>
+  </div>
+  <header>
+  
+    <div class="header">
+      <span class="openbtn" onclick="openNav()">☰</span>
+
+      <img src="images\download.png" alt="">
+      <button class="imgbutt">
+        <img height="20px" src="images\Delivery.793adbaa710baf75ba78.png" alt=""> DELIVERY
+      </button>
+      <button class="collect">
+        <img height="20px" src="images\pickup.47bb874f83ea6acb5a47.png" alt="">PICUP
+      </button>
+      <BUtton class="loginBtn" id="logInBtnHead">
+        Login
+      </BUtton>
+    </div>
+  </header>
+  <div id="printLogin"></div>
+  <main id="mainCon">
+  <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img src="images\892f12f0-fb81-11ed-9cfc-13924e99eefd-DUO-Box-1920x420_desktop_image-2023-05-26045528.jpg"
+          class="d-block w-100" alt="...">
+      </div>
+      <div class="carousel-item">
+        <img src="images\88d05120-fb81-11ed-919a-ef9f5e8ff903-Equity-Banner-1920x420_desktop_image-2023-05-26045528.jpg"
+          class="d-block w-100" alt="...">
+      </div>
+
+    </div>
+    <span id="LeftBtn">
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls"
+        data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      </button>
+    </span>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    </button>
+  </div>
+  <button class="reorder">
+    REORDER
+  </button>
+  <p class="menuHead">
+    <span class="under">EXPLO</span>RE MENU
+  </p>
+  <div class="main">
+    <div class="cardsRoud">
+      <div class="imgecontont">
+        <img class="img" src="images\afc4e8b0-ff99-11ed-8640-872ee63b5da0-Krunch-2023-05-31095826.png" alt="">
+
+      </div>
+      <h6 class="value">Everyday value</h6>
+      <hr class="hafhr">
+      <div class="right">
+        <i class="fa-solid fa-circle fa-sm" style="color: #f1f3f6;"></i>
+      </div>
+    </div>
+
+    <div class="cardsRoud">
+      <div class="imgecontont">
+        <img class="img" src="images\afc4e8b0-ff99-11ed-8640-872ee63b5da0-alacart-2023-05-31095826.png" alt="">
+
+      </div>
+      <h6 class="value">Ala-Carte-&-Combos</h6>
+      <hr class="hafhr">
+      <div class="right">
+        <i class="fa-solid fa-circle fa-sm" style="color: #f1f3f6;"></i>
+      </div>
+    </div>
+
+    <div class="cardsRoud">
+      <div class="imgecontont">
+        <img class="img" src="images\afc536d0-ff99-11ed-a006-17c81341cbe8-Signaturebox-2023-05-31095826.png" alt="">
+
+      </div>
+      <h6 class="value">Signature-Boxes</h6>
+      <hr class="hafhr">
+      <div class="right">
+        <i class="fa-solid fa-circle fa-sm" style="color: #f1f3f6;"></i>
+      </div>
+    </div>
+
+    <div class="cardsRoud">
+      <div class="imgecontont">
+        <img class="img" src="images\afc4e8b0-ff99-11ed-8640-872ee63b5da0-Sharing-2023-05-31095826.png" alt="">
+
+      </div>
+      <h6 class="value">Sharing</h6>
+      <hr class="hafhr">
+      <div class="right">
+        <i class="fa-solid fa-circle fa-sm" style="color: #f1f3f6;"></i>
+      </div>
+    </div>
+
+    <div class="cardsRoud">
+      <div class="imgecontont">
+        <img class="img" src="images\afc4e8b0-ff99-11ed-8640-872ee63b5da0-Snacks-2023-05-31095826.png" alt="">
+
+      </div>
+      <h6 class="value">Snacks-&-Beverages</h6>
+      <hr class="hafhr">
+      <div class="right">
+        <i class="fa-solid fa-circle fa-sm" style="color: #f1f3f6;"></i>
+      </div>
+    </div>
+
+  </div>
+
+  <h3 class="bestSeller"><span class="under"> BEST</span> SELLERS</h3>
+  <div class="flexs overflow-auto">
+    <div class="overflow">
+      <div class="mainRebben">
+        <div class="redRibben"></div>
+        <div class="redRibben left"></div>
+        <div class="redRibben left"></div>
+      </div>
+      <h6 class="cardhead">Krunch Burger</h6>
+      <div class="price">
+        <div class="arrow-right">
+        </div>
+        <p class="prices"><sub> Rs</sub>250</p>
+      </div>
+      <img class="cardImag" height="280px"
+        src="images\43a9fb50-ffaa-11ed-8180-812e571998fe-krunch_variant_0-2023-05-31115706.png" alt="">
+    </div>
+
+
+    <div class="overflow">
+      <div class="mainRebben">
+        <div class="redRibben"></div>
+        <div class="redRibben left"></div>
+        <div class="redRibben left"></div>
+      </div>
+      <h6 class="cardhead">Krunch Burger</h6>
+      <div class="price">
+        <div class="arrow-right">
+        </div>
+        <p class="prices"><sub> Rs</sub>250</p>
+      </div>
+      <img class="cardImag" height="280px"
+        src="images\43a9fb50-ffaa-11ed-8180-812e571998fe-krunch_variant_0-2023-05-31115706.png" alt="">
+    </div>
+    <div class="overflow">
+      <div class="mainRebben">
+        <div class="redRibben"></div>
+        <div class="redRibben left"></div>
+        <div class="redRibben left"></div>
+      </div>
+      <h6 class="cardhead">Hot Wings Bucket</h6>
+      <div class="price">
+        <div class="arrow-right">
+        </div>
+        <p class="prices"><sub> Rs</sub>550</p>
+      </div>
+      <img class="cardImag" height="280px"
+        src="images\43a9fb50-ffaa-11ed-8180-812e571998fe-HotWings_variant_0-2023-05-31115706.png" alt="">
+    </div>
+
+    <div class="overflow">
+      <div class="mainRebben">
+        <div class="redRibben"></div>
+        <div class="redRibben left"></div>
+        <div class="redRibben left"></div>
+      </div>
+      <h6 class="cardhead">Mighty Zinger</h6>
+      <div class="price">
+        <div class="arrow-right">
+        </div>
+        <p class="prices"><sub> Rs</sub>680</p>
+      </div>
+      <img class="cardImag" height="280px"
+        src="images\33685b40-0461-11ee-911c-497570899609-Mighty_variant_0-2023-06-06115641.png" alt="">
+    </div>
+
+    <div class="overflow">
+      <div class="mainRebben">
+        <div class="redRibben"></div>
+        <div class="redRibben left"></div>
+        <div class="redRibben left"></div>
+      </div>
+      <h6 class="cardhead">Krunch Combo</h6>
+      <div class="price">
+        <div class="arrow-right">
+        </div>
+        <p class="prices"><sub> Rs</sub>490</p>
+      </div>
+      <img class="cardImag" height="280px"
+        src="images\43a9fb50-ffaa-11ed-8180-812e571998fe-crunch-with-fries-and-drink-2023-05-31115706.png" alt="">
+    </div>
+  </div>
+
+  <p class="menuHead">
+    <span class="under">TOP</span> DEALS
+  </p>
+
+
+
+
+  <div class="slide-container swiper">
+    <div class="slide-content">
+      <div class="card-wrapper swiper-wrapper">
+        <div class="dealsCard item_direction">
+          <div class="mainRebbenSec">
+            <button class="bttnCard">
+              +Add to Bucket
+            </button>
+            <div class="redRibbens">
+              <div class="redRibben"></div>
+              <div class="redRibben left"></div>
+              <div class="redRibben left"></div>
+            </div>
+            <i class="fa-regular fa-heart fa-xl" style="color: #dc1e1e;"></i>
+          </div>
+          <div>
+            <center>
+              <img height="170px" src="images\43a9fb50-ffaa-11ed-8180-812e571998fe-chicken-n-chips-2023-05-31115706.png"
+                class="cardimg" alt="...">
+            </center>
+            <h5 class="name">Chicken & Chips</h5>
+            <p class="name">2 pieces of Hot and Crispy Fried Chicken+ Fries + Dinner</p>
+            <p class="priceDeal">Rs 520</p>
+          </div>
+        </div>
+
+
+
+
+
+        <div class="dealsCard item_direction card swiper-slide">
+          <div class="mainRebbenSec">
+            <button class="bttnCard">
+              +Add to Bucket
+            </button>
+            <div class="redRibbens">
+              <div class="redRibben"></div>
+              <div class="redRibben left"></div>
+              <div class="redRibben left"></div>
+            </div>
+            <i class="fa-regular fa-heart fa-xl" style="color: #dc1e1e;"></i>
+          </div>
+          <div>
+            <center>
+              <img height="170px"
+                src="images/43a98620-ffaa-11ed-b6b3-6970cc1cd666-zingerstack-Combo-2023-05-31115706.png" class="cardimg"
+                alt="...">
+            </center>
+            <h5 class="name">Zinger Stacker Combo</h5>
+            <p class="name">1 Zinger Stacker + 1 Regular fries + 1 Regular drink</p>
+            <p class="priceDeal">Rs 810</p>
+          </div>
+        </div>
+
+
+        <div class="dealsCard item_direction card swiper-slide">
+          <div class="mainRebbenSec">
+            <button class="bttnCard">
+              +Add to Bucket
+            </button>
+            <div class="redRibbens">
+              <div class="redRibben"></div>
+              <div class="redRibben left"></div>
+              <div class="redRibben left"></div>
+            </div>
+            <i class="fa-regular fa-heart fa-xl" style="color: #dc1e1e;"></i>
+          </div>
+          <div>
+            <center>
+              <img height="170px" src="images/43a9fb50-ffaa-11ed-8180-812e571998fe-twister-combo-2023-05-31115706.png"
+                class="cardimg" alt="...">
+            </center>
+            <h5 class="name">Twister Combo</h5>
+            <p class="name">Twister + 1 Regular fries + 1 Regular drink</p>
+            <p class="priceDeal">Rs 640</p>
+          </div>
+        </div>
+
+
+        <div class="dealsCard item_direction card swiper-slide">
+          <div class="mainRebbenSec">
+            <button class="bttnCard">
+              +Add to Bucket
+            </button>
+            <div class="redRibbens">
+              <div class="redRibben"></div>
+              <div class="redRibben left"></div>
+              <div class="redRibben left"></div>
+            </div>
+            <i class="fa-regular fa-heart fa-xl" style="color: #dc1e1e;"></i>
+          </div>
+          <div>
+            <center>
+              <img height="170px"
+                src="images\43a9fb50-ffaa-11ed-8180-812e571998fe-HotWings_variant_0-2023-05-31115706.png"
+                class="cardimg" alt="...">
+            </center>
+            <h5 class="name">Hot Wings Bucket</h5>
+            <p class="name">Hot Wings Bucket Regular fries + 1 Regular drink</p>
+            <p class="priceDeal">Rs 550</p>
+          </div>
+        </div>
+
+
+        <div class="dealsCard item_direction card swiper-slide">
+          <div class="mainRebbenSec">
+            <button class="bttnCard">
+              +Add to Bucket
+            </button>
+            <div class="redRibbens">
+              <div class="redRibben"></div>
+              <div class="redRibben left"></div>
+              <div class="redRibben left"></div>
+            </div>
+            <i class="fa-regular fa-heart fa-xl" style="color: #dc1e1e;"></i>
+          </div>
+          <div>
+            <center>
+              <img height="170px"
+                src="images\43a95f10-ffaa-11ed-b673-4121381f04c6-rice-and-spice_variant_0-2023-05-31115706.png"
+                class="cardimg" alt="...">
+            </center>
+            <h5 class="name">Rice & Spice</h5>
+            <p class="name">Spiced and buttery rice with 6 pcs of Hot Shots topped</p>
+            <p class="priceDeal">Rs 330</p>
+          </div>
+        </div>
+
+
+        <div class="dealsCard item_direction card swiper-slide">
+          <div class="mainRebbenSec">
+            <button class="bttnCard">
+              +Add to Bucket
+            </button>
+            <div class="redRibbens">
+              <div class="redRibben"></div>
+              <div class="redRibben left"></div>
+              <div class="redRibben left"></div>
+            </div>
+            <i class="fa-regular fa-heart fa-xl" style="color: #dc1e1e;"></i>
+          </div>
+          <div>
+            <center>
+              <img height="170px"
+                src="images\43aa4970-ffaa-11ed-9c55-3705f003c528-3pc-Chikcen_variant_0-2023-05-31115706.png"
+                class="cardimg" alt="...">
+            </center>
+            <h5 class="name">3 Pcs Chicken</h5>
+            <p class="nameShort">3 pieces of Hot and Crispy Fried Chicken</p>
+            <p class="priceDeal">Rs 590</p>
+          </div>
+        </div>
+
+
+        <div class="dealsCard item_direction card swiper-slide">
+          <div class="mainRebbenSec">
+            <button class="bttnCard">
+              +Add to Bucket
+            </button>
+            <div class="redRibbens">
+              <div class="redRibben"></div>
+              <div class="redRibben left"></div>
+              <div class="redRibben left"></div>
+            </div>
+            <i class="fa-regular fa-heart fa-xl" style="color: #dc1e1e;"></i>
+          </div>
+          <div>
+            <center>
+              <img height="170px"
+                src="images\43a9fb50-ffaa-11ed-8180-812e571998fe-zingeratha_variant_0-2023-05-31115706.png"
+                class="cardimg" alt="...">
+            </center>
+            <h5 class="name">Zingeratha</h5>
+            <p class="name">Tender boneless strips, sliced onions, tangy imli chutney,</p>
+            <p class="priceDeal">Rs 330</p>
+          </div>
+        </div>
+
+
+      </div>
+    </div>
+
+    <div class="swiper-button-next swiper-navBtn"></div>
+    <div class="swiper-button-prev swiper-navBtn"></div>
+
+  </div>
+
+
+
+  <div class="firstCardTitle">
+
+    <img src="images\pickup-banner.3e5d171ae16d0a6f2fcc (1).png" class="img-height img-fluid" alt="...">
+    <img src="images\favorites-banner.33609236e6133c8fd2ed.png" class="img-height img-fluid" alt="...">
+    <img src="images\scamOrdr.6f809bf83912dd8dbe31.jpg" class="img-fluid img-height" alt="...">
+
+
+
+
+
+    <div class="card FourtCard" style="width: 36rem;">
+      <div class="card-body">
+        <img src="images\kfc-meal.afc417f5d19998efd26b.png" class="img-fluid card-img" alt="...">
+        <p class="explore">Adding 11 herbs and spices, Explore our menu and add items to your cart.</p>
+        <button class="fourthImagCardButt">EXPLORE MENU</button>
+      </div>
+    </div>
+
+
+  </div>
+  <div class="footer">
+    <div class="center">
+      <img src="images/download.png" alt="KFC">
+      <i class="fa-brands fooIcon fa-youtube" style="color: #e91c3a;"></i>
+      <i class="fa-brands margin fa-instagram"></i>
+      <i class="fa-brands margin fa-facebook-f" style="color: #3067c7;"></i>
+    </div>
+    <div class="fooTr">
+      <ul class="decoration">
+        <li>
+          <a class="linkFoo" href="#">About Us</a>
+        </li>
+        <li>
+          <a class="linkFoo" href="#">Mitao Bhook</a>
+        </li>
+        <li>
+          <a class="linkFoo" href="#">Mitao Bhook - Scholarship</a>
+        </li>
+        <li>
+          <a class="linkFoo" href="#">Privacy Policy</a>
+        </li>
+        <li>
+          <a class="linkFoo" href="#">Careers</a>
+        </li>
+
+      </ul>
+      <ul class="decoration">
+        <li>
+          <a class="linkFoo" href="#">Contact Us</a>
+        </li>
+        <li>
+          <a class="linkFoo" href="#">Store Locator</a>
+        </li>
+        <li>
+          <a class="linkFoo" href="#">Track Order</a>
+        </li>
+      </ul>
+      <ul class="decoration">
+        <li>
+          <a class="linkFoo" href="#">Terms & Conditions</a>
+        </li>
+      </ul>
+      <ul class="decoration">
+        <li>
+          <img class="fooImgBtn" src="images/download (1).png" alt="Button img">
+        </li>
+        <br>
+        <li>
+          <img class="fooImgBtn" src="images/download (2).png" alt="Button img">
+        </li>
+      </ul>
+    </div>
+<div class="myIntro d-flex justify-content-evenly">
+  <p id="year"class="year">
+<p>Powoerd by: <span class="fw-bold">R_k.</span></p>
+  </p>
+</div>
+  </div>
+    
+  </div>
+
+</main>
+  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+  <script src="app.js"></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"></script>
+</body>
+
+</html>
